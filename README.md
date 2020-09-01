@@ -19,6 +19,7 @@ SAKURA
 和菓子好きの方と繋がりたい時。
 
 ## 設計書
+  ER図  https://drive.google.com/file/d/11arKBRlvnb0we-LHV1EDHkaxVnv1QU1s/view
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/16ROEK63JUh0jZaZZqwA0CVs_T2mV--J8zrg9UQX_28I/edit?usp=sharing
