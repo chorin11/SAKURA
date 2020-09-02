@@ -1,4 +1,4 @@
-# <アプリ名>
+# アプリ名
 SAKURA
 ## サイト概要
 和菓子好きの方も日本文化に興味がある方など、和菓子を通して繋がれるサービスです。
@@ -21,7 +21,7 @@ SAKURA
 和菓子好きの方と繋がりたい時。
 
 ## 設計書
-  ER図  https://drive.google.com/file/d/11arKBRlvnb0we-LHV1EDHkaxVnv1QU1s/view
+  ER図  https://drive.google.com/file/d/11arKBRlvnb0we-LHV1EDHkaxVnv1QU1s/view</br>
   テーブル設計書  https://docs.google.com/spreadsheets/d/1n7JpD_5Dytmtw1gxd4LjFtXYLfBlcdV1SlDCUqsuOzs/edit?usp=sharing
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/16ROEK63JUh0jZaZZqwA0CVs_T2mV--J8zrg9UQX_28I/edit?usp=sharing
