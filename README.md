@@ -9,7 +9,7 @@ SAKURA
 
 ### テーマを選んだ理由
 前職でお菓子の販売（和菓子・洋菓子）をしておりました。その際洋菓子は年齢問わず多くのお客様がご購入してくだいますが、和菓子は客層が年配の方が多く若いお客様はあまりいらっしゃらず、商品をさっと見るだけでお帰りになってしまいます。
-若年層の和菓子離れについて声が上がっておりますが、わたしは経験を通してしみじみと感じました。
+若年層の和菓子離れについて声が上がっておりますが、わたしはその事を経験を通してしみじみと感じました。
 
 和菓子は繊細でいろんな思いが込められている、伝統のある日本のお菓子です。由来やどんな意味を込められているのか知りながら興味を持ってもらい、実際に食べてみた時の感想を投稿することで少しでも和菓子を好きになって欲しいと思い製作する事にいたしました。
 
@@ -22,7 +22,7 @@ SAKURA
 
 ## 設計書
   ER図  https://drive.google.com/file/d/11arKBRlvnb0we-LHV1EDHkaxVnv1QU1s/view
-
+  テーブル設計書  https://docs.google.com/spreadsheets/d/1n7JpD_5Dytmtw1gxd4LjFtXYLfBlcdV1SlDCUqsuOzs/edit?usp=sharing
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/16ROEK63JUh0jZaZZqwA0CVs_T2mV--J8zrg9UQX_28I/edit?usp=sharing
 
