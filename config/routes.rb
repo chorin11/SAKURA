@@ -9,5 +9,12 @@ Rails.application.routes.draw do
     passwords:'users/passwords',
     registrations:'users/registrations'
   }
+
+  resources :homes, only: [:top, :about]
+  resources :users, only: [:show.:edit, :update, :unsubscrilbe, :withdrow]
+  resources :post_images, only: [:index, :show, :edit, :update, :destroy] do
+    resource :favirites, only: [:create, :destroy]
+    resources :post_comments, onry: [:create, :destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
