@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sweets_name: MyString
+  sweets_introduction: MyString
+  genre_id: 1
+  season: MyString
+
+two:
+  sweets_name: MyString
+  sweets_introduction: MyString
+  genre_id: 1
+  season: MyString
