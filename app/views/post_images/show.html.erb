@@ -1,0 +1,6 @@
+<h1>投稿詳細</h1>
+  <%= @post_image.image %>
+  <%= @post_image.introduction %>
+
+<%= link_to "編集する", edit_post_image_path(@post_image) %>
+<%= link_to "削除する", post_image_path(@post_image), method: :delete %>

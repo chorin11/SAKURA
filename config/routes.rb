@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :post_images do
     resource :favirites, only: [:create, :destroy]
-    resources :post_comments, onry: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
