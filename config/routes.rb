@@ -11,7 +11,13 @@ Rails.application.routes.draw do
   }
 
   resources :homes, only: [:top, :about]
-  resources :users, only: [:show.:edit, :update, :unsubscrilbe, :withdrow]
+  resources :users, only: [:show, :edit, :update] do
+    member do
+      get :withdraw
+      put :withdraw_done
+    end
+  end
+
   resources :post_images, only: [:index, :show, :edit, :update, :destroy] do
     resource :favirites, only: [:create, :destroy]
     resources :post_comments, onry: [:create, :destroy]
