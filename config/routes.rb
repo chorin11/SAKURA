@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :post_images, only: [:index, :show, :edit, :update, :destroy] do
+  resources :post_images do
     resource :favirites, only: [:create, :destroy]
     resources :post_comments, onry: [:create, :destroy]
   end
