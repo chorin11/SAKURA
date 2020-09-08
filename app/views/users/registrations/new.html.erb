@@ -1,0 +1,77 @@
+<div class="conteiner">
+      <div class="row">
+      <h2 class='col-xs-offset-2'>会員登録</h2>
+      <div class="col-lg-10">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="form-group row">
+            <div class='col-lg-4 col-xs-offset-3'>
+              <h4><%= f.label :ニックネーム %></h4>
+              </div>
+              <div class='col-lg-5 col-xs-offset-3'>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class='col-lg-4 col-xs-offset-3'>
+              <h4><%= f.label :メールアドレス %></h4>
+            </div>
+            <div class='col-lg-5 col-xs-offset-3'>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class='col-lg-4 col-xs-offset-3'>
+              <h4><%= f.label :自己紹介文 %></h4>
+            </div>
+            <div class='col-lg-5 col-xs-offset-3'>
+              <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class='col-lg-4 col-xs-offset-3'>
+              <h4><%= f.label :好きな和菓子 %></h4>
+            </div>
+            <div class='col-lg-5 col-xs-offset-3'>
+              <%= f.text_field :favorite_sweets, autofocus: true, autocomplete: "favorite_sweets", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class='col-lg-4 col-xs-offset-3'>
+              <h4>
+                <%= f.label :パスワード%>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> 文字)</em>
+                <% end %>
+              </h4>
+            </div>
+            <div class='col-lg-5 col-xs-offset-3'>
+              <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class='col-lg-4 col-xs-offset-3'>
+              <h4><%= f.label :パスワード（確認用） %></h4>
+            </div>
+            <div class='col-lg-5 col-xs-offset-3'>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class='col-lg-6 col-xs-offset-3'>
+            <%= f.submit "会員登録",class:'btn btn-primary' %>
+          </div>
+        <% end %>
+        
+        <div class='col-lg-6 col-xs-offset-3'>
+          <h3>会員の方は<%= link_to "こちら", new_session_path(resource_name) %>からログインしてください</h3>
+        </div>
+      </div>
+    </div>
+</div>

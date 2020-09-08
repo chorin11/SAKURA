@@ -1,11 +1,11 @@
-<div class="container text-center"> 
-  <h2>会員の方</h2></br>
+<div class="container"> 
+  <h1>会員の方</h1></br>
     <div class='row'>
       <div class="col-lg-10">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
           <div class="form-group row">
-            <div class='col-lg-6'>
+            <div class='col-lg-2'>
               <h4><%= f.label :メールアドレス %></h4>
             </div>
             <div class='col-lg-6'>
@@ -14,7 +14,7 @@
           </div>
 
           <div class="form-group row">
-            <div class='col-lg-6'>
+            <div class='col-lg-2'>
               <h4><%= f.label :パスワード %></h4>
             </div>
             <div class='col-lg-6'>
@@ -22,13 +22,13 @@
             </div>
           </div>
 
-        <div class="col-lg-12 text-right">
+        <div class="col-lg-9 text-right">
           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "＝＞パスワードを忘れた方はこちら", new_password_path(resource_name) ,:style=>"font-size:15px;"%>
+            <p><%= link_to "＝＞パスワードを忘れた方はこちら", new_password_path(resource_name) ,:style=>"font-size:15px;"%></p>
           <% end %>
         </div>
 
-        <div class="col-lg-5 offset-lg-3 w-50 mt-2">
+        <div class="col-lg-4 col-xs-offset-2">
           <%= f.submit "ログイン" , class:'btn btn-primary btn-block' %>
         </div>
       </div>
@@ -36,8 +36,8 @@
         <% end %>
 </div>
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <h3>会員登録がお済みでない方は<%= link_to "こちら", new_registration_path(resource_name) %></h3>
+    <h3>会員登録がお済みでない方は<%= link_to "こちら", new_registration_path(resource_name) %>から登録してください</h3>
   </div>
 </div>
