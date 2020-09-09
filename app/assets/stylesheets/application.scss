@@ -15,3 +15,25 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.navbar{
+  background-color: burlywood;
+  text-align: center;
+}
+
+.nav-icon{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+footer{
+  background-color: burlywood;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.copy{
+  font-size: 30px;
+}
