@@ -7,9 +7,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   </head>
 
   <body>
+  <nav>
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to"TOP", user_top_path %></li>
+        <li><%= link_to"マイページ", user_path %></li>
+        <li><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to"ABOUT", user_about_path %></li>
+        <li><%= link_to"新規登録", new_user_registration_path %></li>
+        <li><%= link_to"ログイン", user_session_path %></li>
+      <% end %>
+    </ul>
+
     <%= yield %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </body>
 </html>
