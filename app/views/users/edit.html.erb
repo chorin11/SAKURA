@@ -1,0 +1,22 @@
+<h3>プロフィール編集</h3>
+  <%= form_with model:@user do |user| %>
+    <h4><%= user.label :ニックネーム %></h4>
+    <%= user.text_field :name %>
+
+    <h4><%= user.label :メールアドレス %></h4>
+    <%= user.email_field :email %>
+
+    <h4><%= user.label :自己紹介文 %></h4>
+    <%= user.text_area :introduction %>
+
+    <h4><%= user.label :好きな和菓子 %></h4>
+    <%= user.text_field :favorite_sweets %>
+
+    <%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, fallback: "/assets/人物アイコン" %>
+    <%= user.label :プロフィール画像 %>
+    <%= user.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+
+    <%= user.submit "プロフィール画像を変更する" %>
+
+    <%= user.submit "プロフィールを変更する" %>
+  <% end %>
