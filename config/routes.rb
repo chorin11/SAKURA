@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
+
   devise_for :admins, controllers: {
     sessions:'admins/sessions',
     passwords:'admins/passwords',
     registrations:'admins/registrations'
   }
+
   devise_for :users, controllers: {
     sessions:'users/sessions',
     passwords:'users/passwords',
     registrations:'users/registrations'
   }
+  
+  get 'homes/top' => 'homes#top', as: 'user_top'
+  get 'homes/about' => 'homes#about', as: 'user_about'
 
-  resources :homes, only: [:top, :about]
   resources :users, only: [:show, :edit, :update] do
     member do
       get :withdraw
