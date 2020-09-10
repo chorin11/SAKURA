@@ -6,12 +6,18 @@ Rails.application.routes.draw do
     registrations:'admins/registrations'
   }
 
+  namespace :admins do
+    get '/top' => "homes#top"
+  end
+
+  root 'homes#top'
+
   devise_for :users, controllers: {
     sessions:'users/sessions',
     passwords:'users/passwords',
     registrations:'users/registrations'
   }
-  
+
   get 'homes/top' => 'homes#top', as: 'user_top'
   get 'homes/about' => 'homes#about', as: 'user_about'
 
@@ -23,7 +29,7 @@ Rails.application.routes.draw do
   end
 
   resources :post_images do
-    resource :favirites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

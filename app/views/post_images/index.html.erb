@@ -2,7 +2,9 @@
   <% @post_images.each do |post_image| %>
     <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %>
     <%= post_image.introduction %>
+    <%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
 
     <%= link_to "投稿の詳細ページ", post_image_path(post_image.id) %>
 
   <% end %>
+  <%= paginate @post_images %>
