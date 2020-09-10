@@ -15,24 +15,24 @@
 
   <body>
   <div>
-    <nav class="navbar">
-      <ul class="nav-icon">
-        <% if user_signed_in? %>
-          <li><%= link_to"TOP", user_top_path %></li>
-          <li><%= link_to"マイページ", user_path(current_user) %></li>
-          <li><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to"ABOUT", user_about_path %></li>
-          <li><%= link_to"新規登録", new_user_registration_path %></li>
-          <li><%= link_to"ログイン", user_session_path %></li>
-        <% end %>
+    <nav>
+      <ul class="nav-list">
+          <% if user_signed_in? %>
+            <li class="nav-icon"><%= link_to"topページ", user_top_path %></li>
+            <li class="nav-icon"><%= link_to"マイページ", user_path(current_user) %></li>
+            <li class="nav-icon"><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class="nav-icon"><%= link_to"ABOUT", user_about_path %></li>
+            <li class="nav-icon"><%= link_to"新規登録", new_user_registration_path %></li>
+            <li class="nav-icon"><%= link_to"ログイン", user_session_path %></li>
+          <% end %>
       </ul>
     </nav>
   </div>
 
     <%= yield %>
   <footer>
-  <p class="copy">(c)SAKURA</p>
+    <p>(c)SAKURA</p>
   </footer>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </body>

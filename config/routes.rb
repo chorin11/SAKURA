@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'homes/top' => 'homes#top', as: 'user_top'
   get 'homes/about' => 'homes#about', as: 'user_about'
 
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update, :index] do
     member do
       get :withdraw
       put :withdraw_done
