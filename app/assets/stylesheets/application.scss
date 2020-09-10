@@ -16,10 +16,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-.navbar{
-  background-color: burlywood;
+.logo{
+  text-align: left;
+}
+nav{
+  width: 90%;
+  padding: 15px 0;
+  margin: 0 auto;
   text-align: center;
+}
+.nav-list{
+  text-align: right;
+  padding: 10px 0;
+  margin: 0 auto;
 }
 
 .nav-icon{
@@ -29,11 +38,6 @@
 }
 
 footer{
-  background-color: burlywood;
   text-align: center;
   margin: 0 20px;
-}
-
-.copy{
-  font-size: 30px;
 }
