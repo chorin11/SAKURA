@@ -1,0 +1,27 @@
+<% if user_or_post =="1" %>
+  <h1>ユーザ</h1>
+  <table>
+    <% users.each do |user| %>
+      <thead>
+        <tr>
+          <th></th>
+          <th><%= user.name %></th>
+        </tr>
+      </thead>
+    <% end %>
+  </table>
+
+<% elsif user_or_post =="2" %>
+  <h2>投稿</h2>
+    <table>
+      <% posts.each do |post| %>
+        <thead>
+          <tr>
+            <th></th>
+            <th><%= post.introduction %></th>
+          </tr>
+        </thead>
+      <% end %>
+    </table>
+<% else %>
+<% end %>

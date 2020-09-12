@@ -21,6 +21,15 @@ class UsersController < ApplicationController
   def withdrow
   end
 
+  def search
+    @user_or_post = params[:option]
+    if @user_or_post =="1"
+      @user =User.search(params[:search], @user_or_post)
+    else
+      @posts = PostImage.search(params[:search], @user_or_post)
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :introduction,:image, :email, :favorite_sweets, :profile_image)

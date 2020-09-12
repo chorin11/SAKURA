@@ -9,4 +9,12 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   attachment :profile_image
+
+  def User.search(search, user_or_post)
+    if user_or_post == "1"
+      User.where(['name LIKE ?', "%#{search}%"])
+    else
+      User.all
+    end
+  end
 end

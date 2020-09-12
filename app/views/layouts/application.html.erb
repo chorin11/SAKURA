@@ -19,13 +19,22 @@
       <ul class="nav-list">
           <% if user_signed_in? %>
             <li class="nav-icon"><%= link_to"topページ", user_top_path %></li>
-            <li class="nav-icon"><%= link_to"マイページ", user_path(current_user) %></li>
+            <li class="dropdown active nav-icon dropdown-toggle data-toggle="dropdown"">
+              <%= link_to "マイページ", user_path(current_user) %>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="">リンクリストＡ１</a></li>
+                <li><a href="">リンクリストＡ２</a></li>
+                <li><a href="">リンクリストＡ３</a></li>
+              </ul>
+
+            </li>
             <li class="nav-icon"><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li class="nav-icon"><%= link_to"ABOUT", user_about_path %></li>
             <li class="nav-icon"><%= link_to"新規登録", new_user_registration_path %></li>
             <li class="nav-icon"><%= link_to"ログイン", user_session_path %></li>
           <% end %>
+          <li class="nav-icon"><%= render 'users/search_form', user_or_post: @user_or_post, users: @users, posts: @posts %></li>
       </ul>
     </nav>
   </div>
