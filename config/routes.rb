@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   root 'homes#top'
 
+  get "search" => "users#search"
+
   devise_for :users, controllers: {
     sessions:'users/sessions',
     passwords:'users/passwords',
