@@ -19,13 +19,8 @@
       <ul class="nav-list">
           <% if user_signed_in? %>
             <li class="nav-icon"><%= link_to"topページ", user_top_path %></li>
-            <li class="dropdown active nav-icon dropdown-toggle data-toggle="dropdown"">
+            <li class="dropdown active nav-icon dropdown-toggle">
               <%= link_to "マイページ", user_path(current_user) %>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="">リンクリストＡ１</a></li>
-                <li><a href="">リンクリストＡ２</a></li>
-                <li><a href="">リンクリストＡ３</a></li>
-              </ul>
 
             </li>
             <li class="nav-icon"><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
@@ -41,7 +36,7 @@
 
     <%= yield %>
   <footer>
-    <p>(c)SAKURA</p>
+    <div class="f-text">Copyright(c)SAKURA</div>
   </footer>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </body>

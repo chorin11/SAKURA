@@ -18,10 +18,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(function(){
-  $('.top').slick({
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  });
-});
+// $(function(){
+//   $('.top').slick({
+//     dots: true,
+//     autoplay: true,
+//     autoplaySpeed: 3000,
+//   });
+// });
