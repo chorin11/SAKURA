@@ -43,7 +43,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
-  gem 'capistrano-rvm', require: false
 end
 
 group :development do
