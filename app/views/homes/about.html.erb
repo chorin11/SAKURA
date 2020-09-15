@@ -1,14 +1,69 @@
-<div class="about">
+<div class="container">
+  <div class="about">
+    <h3>サイトのご説明</h3>
+    <span class="about-text">
+      ”SAKURA”へご訪問くださりありがとうございます。<br>
+      このサイトは、もっと皆様に和菓子の魅力を知って欲しいという製作者の思いから生まれました。<br>
+    </span>
 
-  <h4 class='about_title'>日本文化の代表 ”和菓子”</h4>
+    <h3>和菓子とは</h3>
+      <span class="about-text">
+        和菓子という言葉の起源は、弥生時代に間食として食べられていた木の実や果物で、この頃は食べ物が豊富になかったため、人々は木の実や果物を食べて空腹を満たしていたと言われています。<br>
+        段々と外国から文化が伝わり、原材料の輸入が増えたことで、江戸時代頃から現在のような和菓子がたくさん作られるようになりました。
+      </span>
 
-  <p class="about_text">
-  職人が丁寧に作る和菓子は繊細で、</br>
-  いろんな思いが込められています。</br>
-  このサイトは、たくさんの人に和菓子をより身近に感じて欲しい、</br>
-  という思いを込めて製作いたしました。</br>
+    <h3>和菓子の魅力</h3>
+      <span class="about-text">
+        繊細で見た目も美しい和菓子は、職人の熟練の技で一つずつ丁寧に作られます。<br>
+        種類はどら焼きやお饅頭、お大福など年中楽しめるお菓子や、季節や節句、行事に合わせて作られる歳時菓などたくさんあります。<br>
+        <br>
+        四季を感じたり、人生の節目にも強く結びついている和菓子。<br>
+        ぜひ和菓子の魅力を感じ、これから一緒に和菓子Lifeを送りませんか。
+      </span>
 
-  <%= link_to "TOPへ戻る",user_top_path, class: "btn btn-link btn-lg" %>
 
-</p>
+    <h3>MENUのご案内</h3>
+      <span class="about-text">
+        それぞれのアイコンをクリックすると各ページを閲覧することができます。
+      </span>
+
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="nav-ex">
+          <%= image_tag asset_path("taiyaki.png") %>
+            <h5 class="sub-title">たい焼きアイコン</h5>
+              <span class="about-text">
+                様々なユーザの投稿を閲覧することができます。<br>
+                お気に入りの投稿や気になった投稿にはぜひいいね！やコメントをしてみましょう。
+              </span>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="nav-ex">
+          <%= image_tag asset_path("コメントのアイコン.png") %>
+            <h5 class="sub-title">つぶやきアイコン</h5>
+              <span class="about-text">
+                ふと和菓子が食べたくなった時や気になる和菓子を見かけた時など、ちょっとつぶやきたい時に。<br>
+                共感したつぶやきにはいいね！を押してみましょう。
+              </span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="nav-ex">
+          <%= image_tag ("/ハンドシェイクアイコン.png") %>
+            <h5 class="sub-title">繋がろうアイコン</h5>
+              <span class="about-text">
+                それぞれのユーザーのプロフィールを閲覧することができます。<br>
+                好きなお菓子が一緒だったり、気になるユーザーを見つけたらぜひフォローしてみましょう。
+              </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7 col-lg-offset-5 link-top">
+      <%= link_to "TOPへ戻る",user_top_path, class: "btn btn-warning" %>
+    </div>
+  </div>
 </div>
