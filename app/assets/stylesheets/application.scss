@@ -14,9 +14,11 @@
  *= require_self
  */
 @import "bootstrap-sprockets";
-@import "bootstrap";
-
-
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 body{
   background-image: url("背景.jpg");
@@ -29,6 +31,8 @@ footer{
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #f51d0db6;
+  position: absolute;
+  bottom: 0;
 }
 
  f-text{
