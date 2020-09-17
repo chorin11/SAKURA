@@ -1,31 +1,16 @@
 // Place all the styles related to the PostImages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.box{
-  margin:2em 0;
-  position: relative;
-  padding: 0.25em 1em;
-  border: solid 2px #ffcb8a;
-  border-radius: 3px 0 3px 0;
+.box {
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  color: #565656;
+  background:white;
+  box-shadow: 0px 0px 0px 10px white;
+  width: 200px;
+  border-radius: 8px;
 }
-.box:before,.box:after
-{
-  content: '';
-  position: absolute;
-  width:10px;
-  height: 10px;
-  border: solid 2px #ffcb8a;
-  border-radius: 50%;
-}
-.box:after {
-  top:-12px;
-  left:-12px;
-}
-.box:before {
-  bottom:-12px;
-  right:-12px;
-}
-.box box-intro {
+.box-intro {
   margin: 0; 
   padding: 0;
 }

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :index] do
     member do
+      get :following, :followers
       get :withdraw
       put :withdraw_done
     end
@@ -34,5 +35,7 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
+
+  resources :relationships, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,12 +1,10 @@
-<h1>投稿一覧</h1>
-<div class="box">
-  <% @post_images.each do |post_image| %>
-    <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %>
-    <div class="box-intro"><%= post_image.introduction %></div>
-    <%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
+<div class="container">
+  <div class="row">
 
-    <%= link_to "投稿の詳細ページ", post_image_path(post_image.id) %>
-
-  <% end %>
-  <%= paginate @post_images %>
+<div id="post_image_index_new>
+    <%= render 'post_images/post_image_new', post_images: @post_images %>
+  </div>
+    
+    <%= paginate @post_total %>
+  </div>
 </div>
