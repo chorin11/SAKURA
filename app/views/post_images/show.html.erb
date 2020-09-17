@@ -1,41 +1,31 @@
+<div class="container">
 <h1>投稿詳細</h1>
-  <%= @post_image.image %>
+  <%= attachment_image_tag @post_image.user, :profile_image, fallback: "/assets/人物アイコン", size:"100x100" %>
+  <%= @post_image.user.name %>
   <%= @post_image.introduction %>
-  <%= @post_image.post_comments.count %>
-  <p><%= @postimage.post_comments.count %>件コメント</p>
+
+  <div id="show_like_<%= @post_image.id %>">
+    <%= render 'favorites/favorite', post_image: @post_image %>
+  </div>
 
 <%= link_to "編集する", edit_post_image_path(@post_image) %>
 <%= link_to "削除する", post_image_path(@post_image), method: :delete %>
 
-<%# --コメント投稿フォーム-- %>
-  <%= form_with (model: [@post.commet, @post_image]) do |post_comment| %>
-    <%= post_comment.text_area :post_comment, rows:'5', placeholder:"コメントを記入してください" %>
-    <%= f.submit "送信する", post_image_path(@post_iamge) %>
-  <% end %>
-<%# --コメント投稿フォーム-- %>
-
-<%# --コメント一覧-- %>
-<%= @post_image.post_comments.each do |post_comment| %>
-  <%= post_comment.user.name %>
-  <%= post_comment.created_at.strftime('%Y/%m/%d') %>
-
-<%# -- いいね機能-- %>
-  <% if @post_iamge.favorited_by?(current_user) %>
-    <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
-      <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-      <%= @post_image.favorites.count %> いいね
+<div class="row">
+  <ul>
+    <li class="comment-create">
+      <h3 class="text-left title">コメント</h3>
+    </li>
+    <li id="comments_area">
+      <%= render partial: 'post_comments/index', locals: { comments: @comments } %>
+    </li>
+  </ul>
+    <hr>
+    <% if user_signed_in? %>
+      <div class="comment-create">
+        <h3 class="text-left">コメントを投稿する</h3>
+        <%= render partial: 'post_comments/form', locals: { comment: @comment, post_image: @post_image } %>
+      </div>
     <% end %>
-  <% else %>
-    <%= link_to post_image_favorites_path(@post_image), method: :post do %>
-      <i class="fa fa-heart-o" aria-hideen="true"></i>
-      <%= @post_image.favorites.count %>  いいね
-    <% end %>
-  <% end %>
-<%# -- いいね機能-- %>
-
-  <%= post_comment.comment %>
-  <% if post_comment.user == current_user %>
-    <%= link_to"削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: delete, class:"bton btn-denger pull-right" %>
-  <% end %>
-<% end %>
-<%# --コメント一覧-- %>
+</div>
+</div>

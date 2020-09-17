@@ -11,3 +11,19 @@
 
     <%= link_to "投稿の詳細ページ", post_image_path(post_image.id) %>
   <% end %>
+
+<div class="follower">
+  <%= link_to followers_user_path(@user.id) do %>
+    <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
+  <% end %>
+</div>
+
+<div class="follow">
+  <%= link_to following_users_user_path(user.id) do %>
+    <h5 style="color: black;">フォロー<%= user.following.count %>人</h5>
+  <% end %>
+</div>
+
+<div>
+  <%= render "follow_form" %>
+</div>

@@ -14,32 +14,33 @@
   </head>
 
   <body>
-    <header class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <nav>
-            <ul class="nav navbar-nav pull-right">
-              <% if user_signed_in? %>
-                <li><%= link_to"topページ", user_top_path %></li>
-                  <li class="dropdown">
-                    <a href="user_path(current_user)" class="dropdown-toggle" data-toggle="dropdown">マイページ<b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-                        <li><%= link_to "プロフィール",edit_user_path(current_user) %></li>
-                        <li><%= link_to "投稿一覧",post_images_path(current_user) %></li>
-                      </ul>
-                  </li>
-                <li class="nav navbar-nav"><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
-              <% else %>
-                <li class="nav navbar-nav"><%= link_to"サイトのご案内", user_about_path %></li>
-                <li class="nav navbar-nav"><%= link_to"新規登録", new_user_registration_path %></li>
-                <li class="nav navbar-nav"><%= link_to"ログイン", user_session_path %></li>
-              <% end %>
-                <li class="nav-icon"><%= render 'users/search_form', user_or_post: @user_or_post, users: @users, posts: @posts %></li>
-            </ul>
-          </nav>
+    <div class="wrapper">
+      <header class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <nav>
+              <ul class="nav navbar-nav pull-right">
+                <% if user_signed_in? %>
+                  <li><%= link_to"投稿する", new_post_image_path %></li>
+                    <li class="dropdown">
+                      <a href="user_path(current_user)" class="dropdown-toggle" data-toggle="dropdown">マイページ<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to "プロフィール",edit_user_path(current_user) %></li>
+                          <li><%= link_to "投稿一覧",post_images_path(current_user) %></li>
+                        </ul>
+                    </li>
+                  <li class="nav navbar-nav"><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li class="nav navbar-nav"><%= link_to"サイトのご案内", user_about_path %></li>
+                  <li class="nav navbar-nav"><%= link_to"新規登録", new_user_registration_path %></li>
+                  <li class="nav navbar-nav"><%= link_to"ログイン", user_session_path %></li>
+                <% end %>
+                  <li class="nav-icon"><%= render 'users/search_form', user_or_post: @user_or_post, users: @users, posts: @posts %></li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
     <%= yield %>
 
@@ -47,5 +48,6 @@
     <div class="f-text">Copyright(c)SAKURA</div>
   </footer>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    </div>
   </body>
 </html>

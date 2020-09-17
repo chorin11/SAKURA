@@ -20,8 +20,11 @@
   box-sizing: border-box;
 }
 
-body{
-  background-image: url("背景.jpg");
+.wrapper{
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 120px;
 }
 
 footer{
@@ -30,7 +33,6 @@ footer{
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #f51d0db6;
   position: absolute;
   bottom: 0;
 }

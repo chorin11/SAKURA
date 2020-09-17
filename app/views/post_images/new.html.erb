@@ -1,11 +1,15 @@
-<h1>新規投稿</h1>
+<div class="container">
+  <div class="row">
+    <%= form_with model: @post_image, url: post_images_path,data:{remote: false} do |f| %>
+      <h1>新規投稿</h1>
+        <h4>画像</h4>
+        <%= f.attachment_field :image %>
+        
+        <h4>投稿内容</h4>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.text_area :introduction, class:"form-control" %>
 
-  <%= form_with model: @post_image do |f| %>
-    <h4>画像</h4>
-    <%= f.attachment_field :image %>
-    
-    <h4>投稿内容</h4>
-    <%= f.text_area :introduction %>
-
-    <%= f.submit "投稿する" %>
-  <% end %>
+        <%= f.submit "投稿する", class:"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

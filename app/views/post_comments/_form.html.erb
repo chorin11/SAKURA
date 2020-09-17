@@ -1,0 +1,5 @@
+
+<%= form_with(model: [post_image, comment]) do |f| %>
+  <%= f.text_area :post_comment, class:"input-mysize" %>
+  <%= f.submit"送信", class:"btn btn-outline-dark comment-submit float-right" %>
+<% end %>
