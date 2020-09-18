@@ -1,31 +1,43 @@
-<div class="container">
-<h1>投稿詳細</h1>
-  <%= attachment_image_tag @post_image.user, :profile_image, fallback: "/assets/人物アイコン", size:"100x100" %>
-  <%= @post_image.user.name %>
-  <%= @post_image.introduction %>
+<div class="container text-center">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <h3 class="panel-title">投稿詳細</h3>
+      </div>
 
-  <div id="show_like_<%= @post_image.id %>">
-    <%= render 'favorites/favorite', post_image: @post_image %>
+      <div class="panel-body user-profile">
+        <%= attachment_image_tag @post_image.user, :profile_image, fallback: "/assets/人物アイコン", size:"100x100" %>
+        <div><%= @post_image.user.name %></div>
+        <%= @post_image.introduction %>
+
+        <div id="show_like_<%= @post_image.id %>">
+          <%= render 'favorites/favorite', post_image: @post_image %>
+        </div>
+
+        <%= render_with_hashtags(@post_image.hashbody) %>
+
+        <% if user_signed_in? %>
+          <%= link_to "編集する", edit_post_image_path(@post_image) %>
+          <%= link_to "削除する", post_image_path(@post_image), method: :delete %>
+        <% end %>
+    </div>
   </div>
-
-<%= link_to "編集する", edit_post_image_path(@post_image) %>
-<%= link_to "削除する", post_image_path(@post_image), method: :delete %>
-
-<div class="row">
-  <ul>
-    <li class="comment-create">
-      <h3 class="text-left title">コメント</h3>
-    </li>
-    <li id="comments_area">
-      <%= render partial: 'post_comments/index', locals: { comments: @comments } %>
-    </li>
-  </ul>
+    
+  <div class="row">
+    <ul>
+      <li class="comment-create">
+        <h3 class="text-left title">コメント</h3>
+      </li>
+      <li id="comments_area">
+        <%= render partial: 'post_comments/index', locals: { comments: @comments } %>
+      </li>
+    </ul>
     <hr>
     <% if user_signed_in? %>
       <div class="comment-create">
         <h3 class="text-left">コメントを投稿する</h3>
-        <%= render partial: 'post_comments/form', locals: { comment: @comment, post_image: @post_image } %>
+          <%= render partial: 'post_comments/form', locals: { comment: @comment, post_image: @post_image } %>
       </div>
     <% end %>
-</div>
+  </div>
 </div>

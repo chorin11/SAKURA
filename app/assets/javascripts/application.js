@@ -17,10 +17,36 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-// $(function(){
-//   $('.top').slick({
-//     dots: true,
-//     autoplay: true,
-//     autoplaySpeed: 3000,
-//   });
-// });
+var slideNumber = 1
+var allSlide = [1, 2, 3, 4]
+
+setInterval(toggleSlide, 8000)
+
+//スライドを切り替える
+function toggleSlide() {
+    slideNumber++
+
+    if(slideNumber > 4) {
+        slideNumber = 1
+    }
+
+    //対象のスライドを表示する
+    $('.slide' + slideNumber).animate({opacity: 1}, 800)
+    $('.slide-dots li:nth-of-type(' + slideNumber + ')').animate({opacity: 1}, 800)
+
+    //他のスライドはopacity: 0にする
+    for(var i = 1; i <= allSlide.length; i++) {
+        if(i !== slideNumber) {
+            $('.slide' + i).animate({opacity: 0}, 800)
+            $('.slide-dots li:nth-of-type(' + i + ')').animate({opacity: 0.5}, 800)
+        }
+    }
+}
+
+$('.slide-dots li').on('click', function() {
+  var index = $('.slide-dots li').index(this)
+
+  slideNumber = index
+  clearInterval()
+  toggleSlide()
+})

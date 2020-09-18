@@ -4,8 +4,9 @@
     <% @users.each do |user| %>
       <thead>
         <tr>
-          <th></th>
+          <th><%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, fallback: "/assets/人物アイコン" %></th>
           <th><%= user.name %></th>
+          <td><%=link_to "見る" ,user_path(user.id) %></td>
         </tr>
       </thead>
     <% end %>
@@ -17,8 +18,9 @@
       <% @posts.each do |post| %>
         <thead>
           <tr>
-            <th></th>
+            <th><%= attachment_image_tag @post_image, :image, size:"150x150",class: "coffee_image_media" %></th>
             <th><%= post.introduction %></th>
+            <td><%=link_to "見る" ,post_image_path(@post_image.id) %></td>
           </tr>
         </thead>
       <% end %>

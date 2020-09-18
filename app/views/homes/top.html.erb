@@ -1,29 +1,20 @@
-<div class="container">
-  <div class="top">
-    <%= image_tag "/桜もち.jpg", class: "top-image"  %>
+<div class="top-page-header">
+  <div class="top-slide">
+    <div class="slide-img slide1"></div>
+    <div class="slide-img slide2"></div>
+    <div class="slide-img slide3"></div>
+    <div class="slide-img slide4"></div>
   </div>
-</div>
+  <ul class="slide-dots">
+    <li>・</li>
+    <li>・</li>
+    <li>・</li>
+    <li>・</li>
+  </ul>
 
-<div class="row text-center">
-  <div class="top-title col-lg-4 col-lg-offset-4 ">menu</div>
-</div>
-<div class="row text-center">
-  <div class="top-nav">
-        <div class="col-lg-4">
-          <%=link_to image_tag("/taiyaki.png"),post_images_path %>
-          <p class="top-text">
-            ここはみんなのお菓子の投稿が見れるギャラリーです。好きなお菓子や気になる投稿をチェックして、お気に入りの投稿を探してみてください。きっと新しい出会いや発見があると思います！いいねやコメントも忘れずに！
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <%= image_tag asset_path("コメントのアイコン.png")%>
-          <p class="top-text">
-            日々のつぶやきが投稿できるコーナーです。ほっと一息ついた時に食べた和菓子やふと見かけて気になった和菓子を見つけた時などにちょっとつぶやいてみてください。
-        </div>
-        <div class="col-lg-4">
-          <%=link_to image_tag("/ハンドシェイクアイコン.png"),users_path %>
-          <p class="top-text">
-            たくさんのユーザーと繋がれる場所です。好きな和菓子が一緒だったり、気になる投稿をしているユーザーをフォローして和菓子の輪を広げていきましょう！
-        </div>
-  </div>
+  <p class="top-page-text">
+    こちらは和菓子専門のコミュニティサイトです。<br>
+    和菓子がお好きな方や、和菓子に興味がある方は<br>
+    ぜひご利用ください！
+  <p>
 </div>
