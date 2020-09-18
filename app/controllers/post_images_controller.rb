@@ -7,7 +7,7 @@ class PostImagesController < ApplicationController
   def show
     @post_image = PostImage.find(params[:id])
     @post_comment = PostComment.new
-    @comments = @post_image.comments.order(created_at:desc)
+    @comments = @post_image.committed!.order(created_at: :desc)
   end
 
   def edit

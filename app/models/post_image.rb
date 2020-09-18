@@ -35,8 +35,8 @@ class PostImage < ApplicationRecord
     post_image.hashtags.clear
     hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
     hashtags.uniq.map do |hashtag|
-      tag = Hashtag.find_or_create_by(hashname: hashtag.douncase.delete('#'))
-      PostImage.hashtags << tag
+      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      post_image.hashtags << tag
     end
   end
   # タグ付け機能
