@@ -19,6 +19,9 @@
         <div class="navbar-inner">
           <div class="container">
             <nav>
+            <div class="nav navbar-nav navbar-reft navbar-dark logo" >
+              <%= link_to "SAKURA",root_path %>
+            </div>
               <ul class="nav navbar-nav pull-right">
                 <% if user_signed_in? %>
                   <li><%= link_to"投稿する", new_post_image_path %></li>
