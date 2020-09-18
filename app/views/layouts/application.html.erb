@@ -17,8 +17,7 @@
     <div class="wrapper">
       <header class="navbar">
         <div class="navbar-inner">
-          <div class="container">
-            <nav>
+          <nav>
             <div class="nav navbar-nav navbar-reft navbar-dark logo" >
               <%= link_to "SAKURA",root_path %>
             </div>
@@ -40,16 +39,15 @@
                 <% end %>
                   <li class="nav-icon"><%= render 'users/search_form', user_or_post: @user_or_post, users: @users, posts: @posts %></li>
               </ul>
-            </nav>
-          </div>
+          </nav>
         </div>
       </header>
+      <%= yield %>
 
-    <%= yield %>
+    <footer>
+      <div class="f-text">Copyright(c)SAKURA</div>
+    </footer>
 
-  <footer>
-    <div class="f-text">Copyright(c)SAKURA</div>
-  </footer>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     </div>
   </body>

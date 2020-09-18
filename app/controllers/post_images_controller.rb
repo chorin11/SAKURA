@@ -41,10 +41,21 @@ class PostImagesController < ApplicationController
     post_image.destroy
     redirect_to post_images_path
   end
+
+  def hashtag
+    @user = current_user
+    if params[:name].nil?
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.post_images.count}
+    else
+      @hashtag = Hashtag.find_by(hashname: params[:name])
+      @postimage = @hashtag.post_images.page(params[:page]).per(20).reverse_order
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.post_images.count}
+    end
+  end
   
   private
   def post_image_params
-    params.require(:post_image).permit(:introduction, :image)
+    params.require(:post_image).permit(:introduction, :image, :hashbody, :hashtag_ids)
   end
 
 end

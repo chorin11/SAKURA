@@ -1,5 +1,16 @@
 <div class="container">
   <div class="row">
+  <% if @post_image.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= @post_image.errors.count %>件の入力エラーにより、投稿出来ませんでした</h3>
+        <ul>
+          <% @post_image.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
     <%= form_with model: @post_image, url: post_images_path,data:{remote: false} do |f| %>
       <h1>新規投稿</h1>
         <h4>画像</h4>
@@ -8,6 +19,9 @@
         <h4>投稿内容</h4>
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <%= f.text_area :introduction, class:"form-control" %>
+
+        <h4>ハッシュタグ入力欄</h4>
+        <%= f.text_area :hashbody, size:"55x3" %>
 
         <%= f.submit "投稿する", class:"btn btn-primary" %>
     <% end %>

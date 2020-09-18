@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_17_094141) do
+ActiveRecord::Schema.define(version: 2020_09_18_054554) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,6 +38,22 @@ ActiveRecord::Schema.define(version: 2020_09_17_094141) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hashtag_post_images", force: :cascade do |t|
+    t.integer "post_image_id"
+    t.integer "hashtag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashtag_id"], name: "index_hashtag_post_images_on_hashtag_id"
+    t.index ["post_image_id"], name: "index_hashtag_post_images_on_post_image_id"
+  end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string "hashname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashname"], name: "index_hashtags_on_hashname", unique: true
+  end
+
   create_table "post_comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_image_id"
@@ -52,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_09_17_094141) do
     t.integer "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "hashbody"
   end
 
   create_table "relationships", force: :cascade do |t|
