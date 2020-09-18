@@ -1,10 +1,23 @@
-<table class="table table-hover table-inverse">
-  <thead>
-    <tr>
-      <th></th>
-      <th>introduce</th>
-    </tr>
-  </thead>
+<div class="container">
+  <h2>新着投稿</h2>
+    <div class="row justify-content-between under-shadow">
+      <% @post_images.each do |post_image| %>
+        <div class="" style="width: 24rem;">
+          <%= link_to post_image_path(post_image), class: "text-decoration-none" do %>
+            <%= attachment_image_tag post_image, :image, size:"150x150",class: "coffee_image_media" %><br>
+            <div class="card-body">
+              <%= link_to user_path(post_image.user_id) do %>
+                <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"profile-img-circle", size:"30x30" %>
+                <%= post_image.user.name %>
+              <% end %>
+              <div id="index_favorite_<%= post_image.id %>">
+                <%= render 'favorites/favorite', post_image: @post_image %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
   <% @post_images.each do |post_image| %>
     <%= link_to post_image_path(post_image) do %>
@@ -17,12 +30,12 @@
         <%= post_image.user.name %>
       <% end %>
       <div id="index_favorite_<%= post_image.id %>">
-        <%= render 'favorites/favorite', post_image: post_image %>
+        <%= render 'favorites/favorite', post_image: @post_image %>
       </div>
     </div>
   <% end %>
 </table>
     
     <%= paginate @post_total %>
-
+</div>
     

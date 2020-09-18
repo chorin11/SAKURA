@@ -27,7 +27,7 @@ class User < ApplicationRecord
   end
 
   def already_favorited?(post_image)
-    self.favorites.exists?(post_image_id: post_image.id)
+    self.favorites.exists?(post_image_id: current_password)
   end
 
   def User.search(search, user_or_post)
