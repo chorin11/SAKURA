@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @post_images = @user.post_images.page(params[:id]).reverse_order
+    @post_images = @user.post_images
   end
 
   def edit
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def search
     @user_or_post = params[:option]
     if @user_or_post =="1"
-      @user =User.search(params[:search], @user_or_post)
+      @users =User.search(params[:search], @user_or_post)
     else
       @posts = PostImage.search(params[:search], @user_or_post)
     end

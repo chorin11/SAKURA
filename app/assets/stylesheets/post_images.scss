@@ -10,7 +10,34 @@
   width: 200px;
   border-radius: 8px;
 }
+
 .box-intro {
   margin: 0; 
   padding: 0;
 }
+
+.topnew{
+  display: inline-flex;
+  margin: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.card {
+  width: 200px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.card-show {
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.card-img{
+  padding-top: 20px;
+}
+

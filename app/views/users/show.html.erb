@@ -1,43 +1,50 @@
 <div class="continer">
   <div class="row">
-    <div class="col-lg-1 col-xs-offset-4 profile-img">
+    <div class="col-lg-1 col-xs-offset-4 mypage-img">
       <%= attachment_image_tag @user, :profile_image_id, size: '40x40', fallback: "/assets/人物アイコン" %>
     </div>
+    
     <h3 class="col-xs-offset-3"><%= @user.name %>さんのマイページ</h3>
+    <div class="col-xs-offset-6">
+      <% if @user.id == current_user.id %>
+        <%= link_to "プロフィール編集", edit_user_path(@user) %>
+      <% end %>
+    </div>
   </div>
 
-  <div class="follow">
-    <%= link_to following_user_path(@user.id), remote: true do %>
-      <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
-    <% end %>
-  </div>
-  <div class="follower">
-    <%= link_to followers_user_path(@user.id), remote: true do %>
-      <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
-    <% end %>
-  </div>
+  <div class="col-lg-offset-5">
+    <div class="follow">
+      <%= link_to following_user_path(@user.id), remote: true do %>
+        <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
+      <% end %>
+    </div>
+    <div class="follower">
+      <%= link_to followers_user_path(@user.id), remote: true do %>
+        <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
+      <% end %>
+    </div>
 
-  <div>
-    <%= render "follow_form" %>
-  </div>
-
-
-  <% if @user.id == current_user.id %>
-    <%= link_to "プロフィール編集", edit_user_path(@user) %>
-  <% end %>
-
-  <div class="row">
-    <div class="post">
-      <h3 class="col-lg-3">投稿一覧</h3>
+    <div>
+      <%= render "follow_form" %>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-lg-5">
+    <h3 class="col-xs-offset-1 mypage-post">投稿一覧</h3>
+
+    <div class="col-lg-3 col-xs-offset-1">
       <% @post_images.each do |post_image| %>
-        <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
-        <%= post_image.introduction %><br>
-        <%= link_to "投稿の詳細ページ", post_image_path(post_image.id) %><br>
+        <div class="card">
+          <div class="text-center card-img">
+            <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
+          </div>
+          <div class="text-center">
+            <%= post_image.introduction %><br>
+          </div>
+          <div class="col-xs-offset-9">
+            <%= link_to "詳細", post_image_path(post_image.id) %><br>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
