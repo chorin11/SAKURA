@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_18_054554) do
+ActiveRecord::Schema.define(version: 2020_09_19_085727) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_054554) do
   create_table "post_images", force: :cascade do |t|
     t.string "introduction"
     t.integer "user_id"
-    t.integer "image_id"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "hashbody"
