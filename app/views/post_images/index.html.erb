@@ -1,43 +1,29 @@
 <div class="container">
-  <h2>新着投稿</h2>
-    <div class="row justify-content-between under-shadow">
-      <% @post_images.each do |post_image| %>
-        <div class="" style="width: 24rem;">
-        <%= post_image.id %>
-          <%= link_to post_image_path(post_image), class: "text-decoration-none" do %>
-            
-            <%= attachment_image_tag post_image, :image, size:"150x150",class: "coffee_image_media" %><br>
-            <div class="card-body">
-              <%= link_to user_path(post_image.user_id) do %>
-                <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"profile-img-circle", size:"30x30" %>
-                <%= post_image.user.name %>
-              <% end %>
-              <div id="index_favorite_<%= post_image.id %>">
-                <%= render 'favorites/favorite', post_image: post_image %>
-              </div>
+  <div class="row">
+    <h2>みんなの投稿</h2>
+
+    <% @post_images.each do |post_image| %>
+      <div class="col-lg-3">
+        <div class="card">
+          <%= link_to post_image_path(post_image) do %>
+            <div class="text-center card-img">
+              <%= attachment_image_tag post_image, :image, size:"160x160",class: "coffee_image_media" %><br>
             </div>
           <% end %>
+
+          <%= link_to user_path(post_image.user_id) do %>
+            <div class="text-center">
+              <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"profile-img-circle", size:"30x30" %>
+              <%= post_image.user.name %>
+            </div>
+          <% end %>
+          <div id="index_favorite_<%= post_image.id %>">
+            <%= render 'favorites/favorite', post_image: post_image %>
+          </div>
         </div>
-      <% end %>
-    </div>
-
-  <% @post_images.each do |post_image| %>
-    <%= link_to post_image_path(post_image) do %>
-      <%= attachment_image_tag post_image, :image, size:"80x80",class: "coffee_image_media" %><br>
-    <% end %>
-
-    <div class="card-body>
-      <%= link_to user_path(post_image.user_id) do %>
-        <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"profile-img-circle", size:"30x30" %>
-        <%= post_image.user.name %>
-      <% end %>
-      <div id="index_favorite_<%= post_image.id %>">
-        <%= render 'favorites/favorite', post_image: post_image %>
       </div>
-    </div>
-  <% end %>
-</table>
-    
+    <% end %>
+  </div>
     <%= paginate @post_total %>
 </div>
     
