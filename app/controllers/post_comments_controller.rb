@@ -1,8 +1,9 @@
 class PostCommentsController < ApplicationController
   def create
-    @post_image = PostImage.find(params[:post_image.id])
-    @comment = @post_image.comments.build(post_comment_params)
-    @comment.post_image_id = current_user.id
+    @post_image = PostImage.find(params[:post_image_id])
+    @comment = @post_image.post_comments.build(post_comment_params)
+    # @comment.post_image_id = current_user.id
+    @comment.user_id = current_user.id
     @comment.save
     render :index
   end

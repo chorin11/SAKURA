@@ -36,7 +36,7 @@
     <% if user_signed_in? %>
       <div class="comment-create">
         <h3 class="text-left">コメントを投稿する</h3>
-          <%= render partial: 'post_comments/form', locals: { comment: @comment, post_image: @post_image } %>
+          <%= render partial: 'post_comments/form', locals: { comment: @post_comment, post_image: @post_image } %>
       </div>
     <% end %>
   </div>

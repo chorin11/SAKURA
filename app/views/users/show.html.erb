@@ -1,29 +1,44 @@
-<h3><%= @user.name %>さんのマイページ</h3>
-  <%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, fallback: "/assets/人物アイコン" %>
+<div class="continer">
+  <div class="row">
+    <div class="col-lg-1 col-xs-offset-4 profile-img">
+      <%= attachment_image_tag @user, :profile_image_id, size: '40x40', fallback: "/assets/人物アイコン" %>
+    </div>
+    <h3 class="col-xs-offset-3"><%= @user.name %>さんのマイページ</h3>
+  </div>
+
+  <div class="follow">
+    <%= link_to following_user_path(@user.id), remote: true do %>
+      <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
+    <% end %>
+  </div>
+  <div class="follower">
+    <%= link_to followers_user_path(@user.id), remote: true do %>
+      <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
+    <% end %>
+  </div>
+
+  <div>
+    <%= render "follow_form" %>
+  </div>
+
+
   <% if @user.id == current_user.id %>
     <%= link_to "プロフィール編集", edit_user_path(@user) %>
   <% end %>
 
-<h3>投稿一覧</h3>
-  <% @post_images.each do |post_image| %>
-    <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %>
-    <%= post_image.introduction %>
+  <div class="row">
+    <div class="post">
+      <h3 class="col-lg-3">投稿一覧</h3>
+    </div>
+  </div>
 
-    <%= link_to "投稿の詳細ページ", post_image_path(post_image.id) %>
-  <% end %>
-
-<div class="follower">
-  <%= link_to followers_user_path(@user.id) do %>
-    <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
-  <% end %>
-</div>
-
-<div class="follow">
-  <%= link_to following_users_user_path(user.id) do %>
-    <h5 style="color: black;">フォロー<%= user.following.count %>人</h5>
-  <% end %>
-</div>
-
-<div>
-  <%= render "follow_form" %>
+  <div class="row">
+    <div class="col-lg-5">
+      <% @post_images.each do |post_image| %>
+        <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
+        <%= post_image.introduction %><br>
+        <%= link_to "投稿の詳細ページ", post_image_path(post_image.id) %><br>
+      <% end %>
+    </div>
+  </div>
 </div>
