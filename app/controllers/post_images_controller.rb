@@ -54,6 +54,11 @@ class PostImagesController < ApplicationController
     end
   end
   
+  def post_search
+    selection = params[:keyword]
+    @post_images = PostImage.sort(selection)
+  end
+
   private
   def post_image_params
     params.require(:post_image).permit(:introduction, :image, :hashbody, :hashtag_ids)

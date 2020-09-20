@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/post_image/hashtag/:name' => 'post_images#hashtag'
   get '/post_image/hashtag' => 'post_images#hashtag'
 
+  get "/post_images/search" => "post_images#search"
+
   devise_for :users, controllers: {
     sessions:'users/sessions',
     passwords:'users/passwords',

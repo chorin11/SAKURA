@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
+  # フォロー機能
   def following?(user)
     following_relationships.find_by(following_id: user.id)
   end
@@ -25,11 +26,15 @@ class User < ApplicationRecord
   def unfollow(user)
     following_relationships.find_by(following_id: user.id).destroy
   end
+  # フォロー機能
 
+  # いいね機能
   def already_favorited?(post_image)
     self.favorites.exists?(post_image_id: post_image.id)
   end
+  # いいね機能
 
+  # 検索機能
   def User.search(search, user_or_post)
     if user_or_post == "1"
       User.where(['name LIKE ?', "%#{search}%"])
@@ -37,4 +42,20 @@ class User < ApplicationRecord
       User.all
     end
   end
+  # 検索機能
+
+  # ソート機能
+  def self.sort(selection)
+    case selection
+    when 'new'
+      return all.order(created_at: :DESC)
+    when 'old'
+      return all.order(created_at: :ASC)
+    when 'favorites'
+      return find(Favorites.group(:post_image_id).order(Arel.sql('count(post_image_id) desc')).pluck(:post_image_id))
+    when 'disfavorites'
+      return find(Favorites.group(:post_image_id).order(Arel.sql('count(post_image_id) asc')).pluck(:post_image_id))
+    end
+  end
+  # ソート機能
 end
