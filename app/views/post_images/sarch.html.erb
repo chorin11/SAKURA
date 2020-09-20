@@ -1,0 +1,40 @@
+<h1>検索結果</h1>
+
+<%= form_with model: @post_images, url: post_search_path, method: :get, local: true do |form| %>
+  <%= form.select :keyword, [ ['投稿が新しい順', 'new'],
+                            ['投稿が古い順', 'old'],
+                            ['いいねが多い順', 'favorites'],
+                            ['いいねが少ない順', 'disfavorites'],
+                          ] %>
+  <%= form.submit"検索” %>
+<% end %>
+
+<% @post_images.each do |post_image| %>
+  <div class="new-form">
+    <div class="col-lg-3">
+      <div class="card">
+      <%= link_to user_path(post_image.user_id) do %>
+        <div class="text-center">
+          <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"profile-img-circle", size:"20x20" %>
+          <%= post_image.user.name %>
+        <% end %>
+        </div>
+        <%= link_to post_image_path(post_image) do %>
+          <div class="text-center card-img">
+            <%= attachment_image_tag post_image, :image, size:"160x160",class: "coffee_image_media" %><br>
+          </div>
+        <% end %>
+
+        <div class="text-center">
+          <%= post_image.introduction.truncate(10) %>
+        </div>
+
+        <div class="text-center">
+          <div id="index_favorite_<%= post_image.id %>">
+            <%= render 'favorites/favorite', post_image: post_image %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
