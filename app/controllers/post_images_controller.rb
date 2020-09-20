@@ -8,6 +8,7 @@ class PostImagesController < ApplicationController
     @post_image = PostImage.find(params[:id])
     @post_comment = PostComment.new
     @comments = @post_image.post_comments.order(created_at: :desc)
+    @user = @post_image.user
   end
 
   def edit
