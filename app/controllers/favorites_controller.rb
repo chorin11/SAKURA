@@ -1,19 +1,22 @@
 class FavoritesController < ApplicationController
-  before_action :post_image_params
+  # before_action :post_image_path
 
   def create
-    post_image = PostImage.find(params[:post_image_id])
-    favotite = current_user.favorites.new(post_image_id: @post_image.id)
+    @post_image = PostImage.find(params[:post_image_id])
+    favotite = current_user.favorites.new(post_image_id: params[:post_image_id])
     favotite.save
   end
 
   def destroy
-    post_image = PostImage.find(params[:post_image_id])
-    @favorite = favorites.find_by(user_id: current_user.id, post_image_id: @post_image.id).deestroy
+    @post_image = PostImage.find(params[:post_image_id])
+    favorite = Favorite.find_by(user_id: current_user.id, post_image_id: params[:post_image_id])
+    favorite.destroy
   end
 
   private
-  def post_image_params
-    @post_image = PostImage.find(params[:post_image_id])
+
+  def favorite_params
+    params.require(:post_image).permit(:user_id, :post_image_id)
+  end
   
 end

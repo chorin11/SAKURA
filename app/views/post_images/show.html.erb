@@ -7,7 +7,7 @@
           <%= attachment_image_tag @post_image, :image, size:"300x300",class: "coffee_image_media" %><br>
         </div>
         <%= @post_image.introduction %>
-        <div id="show_like_<%= @post_image.id %>">
+        <div id="show_favorite_<%= @post_image.id %>">
           <%= render 'favorites/favorite', post_image: @post_image %>
         </div>
 
@@ -18,7 +18,7 @@
           <%= @post_image.user.name %>
         </div>
 
-        <% if user_signed_in? %>
+        <% if @user.id == current_user.id %>
           <%= link_to "編集する", edit_post_image_path(@post_image) %>
           <%= link_to "削除する", post_image_path(@post_image), method: :delete %>
         <% end %>
