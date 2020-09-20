@@ -1,6 +1,7 @@
 // Place all the styles related to the PostImages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .box {
   padding: 0.2em 0.5em;
   margin: 2em 0;
@@ -23,21 +24,70 @@
   background-color: #ffffff;
 }
 
+// 投稿記事
 .card {
   width: 200px;
   background: #fff;
   border-radius: 5px;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+	transition: .3s;
 }
 
-.card-show {
-  width: 350px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px #ccc;
+.card:hover {
+	box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+	transform: translateY(-4px);
 }
 
 .card-img{
   padding-top: 20px;
 }
 
+// 投稿記事
+
+// 投稿詳細
+.card-show {
+  width: 900px;
+  margin-left: 150px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.comment{
+  margin-top: 30px;
+}
+
+.card-name{
+  margin-bottom: 30px;
+}
+
+.comment-btn{
+  margin-left: 550px;
+  margin-top: 30px;
+}
+
+.card-img-show{
+  margin-top: 40px;
+  margin-right: 0;
+}
+// 投稿詳細
+
+// 新規投稿
+.new-post
+{
+  margin-top: 50px;
+}
+
+.new-form{
+  margin-top: 60px;
+}
+
+.new-form-text{
+  margin-top: 30px;
+}
+
+.new-form-btn{
+  margin-top: 40px;
+  margin-left: 500px;
+}
+// 新規投稿
