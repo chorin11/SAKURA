@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get "/post_images/search" => "post_images#search"
 
+  post '/homes/guest_sign_in', to: 'homes#new_guest'
+
   devise_for :users, controllers: {
     sessions:'users/sessions',
     passwords:'users/passwords',
