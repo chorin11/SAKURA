@@ -1,51 +1,93 @@
 <div class="continer">
   <div class="row">
-    <div class="col-lg-1 col-xs-offset-4 mypage-img">
-      <%= attachment_image_tag @user, :profile_image_id, size: '40x40', fallback: "/assets/人物アイコン" %>
-    </div>
-    
-    <h3 class="col-xs-offset-3"><%= @user.name %>さんのマイページ</h3>
-    <div class="col-xs-offset-6">
+  
+    <h1 class="col-xs-offset-1"><%= @user.name %>さんのページ</h1>
+    <div class="col-lg-2">
       <% if @user.id == current_user.id %>
-        <%= link_to "プロフィール編集", edit_user_path(@user) %>
+        <%= link_to "プロフィール編集", edit_user_path(@user), class:"btn btn-primary col-xs-offset-11 mypage-btn" %>
       <% end %>
     </div>
-  </div>
 
-  <div class="col-lg-offset-5">
-    <div class="follow">
-      <%= link_to following_user_path(@user.id), remote: true do %>
-        <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
-      <% end %>
+  <div class="mypage-container col-lg-10">
+    <div class="col-lg-3 mypage-img">
+      <%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "/assets/人物アイコン" %>
     </div>
-    <div class="follower">
-      <%= link_to followers_user_path(@user.id), remote: true do %>
-        <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
-      <% end %>
+
+    <div class="col-lg-5">
+      <h4>自己紹介文</h4>
+      <%= @user.introduction %>
+      <hr>
+      <h4>好きな和菓子</h4>
+      <%= @user.favorite_sweets %>
     </div>
 
     <div>
       <%= render "follow_form" %>
     </div>
+
   </div>
 
-  <div class="row">
-    <h3 class="col-xs-offset-1 mypage-post">投稿一覧</h3>
+  </div>
+</div>
 
-    <div class="col-lg-3 col-xs-offset-1">
-      <% @post_images.each do |post_image| %>
-        <div class="card">
-          <div class="text-center card-img">
-            <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
-          </div>
-          <div class="text-center">
-            <%= post_image.introduction %><br>
-          </div>
-          <div class="col-xs-offset-9">
-            <%= link_to "詳細", post_image_path(post_image.id) %><br>
+<div class="container">
+  <div class="row">
+    <div class="tab_container">
+      <input id="tab1" type="radio" name="tab_item" checked>
+      <label class="tab_item" for="tab1">投稿</label>
+      <input id="tab2" type="radio" name="tab_item">
+      <label class="tab_item" for="tab2">フォロー<%= @user.following.count %>人</label>
+      <input id="tab3" type="radio" name="tab_item">
+      <label class="tab_item" for="tab3">フォロワー<%= @user.followers.count %>人</label>
+      <div class="tab_content" id="tab1_content">
+        <div class="tab_content_description">
+          <div class="c-txtsp">
+            <% @post_images.each do |post_image| %>
+              <div class="card">
+                <div class="text-center card-img">
+                  <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
+                </div>
+                <div class="text-center">
+                  <%= post_image.introduction %><br>
+                </div>
+                <div class="col-xs-offset-9">
+                  <%= link_to "詳細", post_image_path(post_image.id) %><br>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
-      <% end %>
+      </div>
+      <div class="tab_content" id="tab2_content">
+        <div class="tab_content_description">
+          <div class="c-txtsp">
+            <% @user.following.each do |user| %>
+              <table>
+                <tr class="text-center">
+                  <td><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/人物アイコン" %></td>
+                  <td><%= user.name %></td>
+                  <td><%= link_to '詳細', user_path(user) %></td>
+                </tr>
+              </table>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="tab_content" id="tab3_content">
+        <div class="tab_content_description">
+          <div class="c-txtsp">
+            <% @user.followers.each do |user| %>
+              <table>
+                <tr>
+                  <td><%= attachment_image_tag user, :profile_image_id, size: '40x40', fallback: "/assets/人物アイコン" %></td>
+                  <td><%= user.name %></td>
+                  <td><%= link_to '詳細', user_path(user) %></td>
+                </tr>              
+              </table>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -23,13 +23,14 @@
 
 body {
   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgba(235, 231, 234, 0.5);
 }
 
 // ヘッダー
 header {
   width: 100%;
   padding: 15px 4% 10px;
-  background-color: rgb(235, 227, 217);
+  background-color: rgba(83, 28, 65, 0.733);
   // position: fixed;
   top: 0;
   display: flex;
@@ -44,7 +45,12 @@ header {
 
 .nav-icon{
   text-decoration: none;
-  color: #4b4b4b;
+  color: #e7d8d8;
+}
+
+.nav-icon:hover{
+  text-decoration: none;
+  color: #e7d8d8;
 }
 
 ul{
@@ -67,17 +73,19 @@ nav{
   min-height: 100vh;
   position: relative;
   box-sizing: border-box;
-  padding-bottom: 120px;
+  padding-bottom: 40px;
 }
 
 footer{
-  font-size: 80%;
+  font-size: 20px;
   width: 100%;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   position: absolute;
   bottom: 0;
+  background-color: rgba(83, 28, 65, 0.733);
+  color: #e7d8d8;
 }
 
  f-text{
@@ -87,21 +95,19 @@ footer{
 }
 
 h1 {
-  position: relative;
-  color: #333;
-  text-shadow: 0 0 2px white;
+  position: relative;/*相対位置*/
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  font-family: monospace;
 }
 
 h1:before {
-  content: "";
-  position: absolute;
-  background: #e6ca8ed3;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  top: 50%;
-  left: -15px;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: -1;
+  font-family: "FontAwesome";
+  content: "\f075";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #643d7e; /*アイコン色*/
 }
