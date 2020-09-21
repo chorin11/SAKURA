@@ -46,11 +46,15 @@
 
 // 投稿詳細
 .card-show {
-  width: 900px;
-  margin-left: 150px;
+  width: 750px;
+  margin-left: 200px;
+  margin-top: 40px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
+  display:flex;
+  justify-content:center;
+  align-items: center;
 }
 
 .comment{
@@ -68,7 +72,53 @@
 
 .card-img-show{
   margin-top: 40px;
-  margin-right: 0;
+  margin-right: 80px;
+  margin-bottom: 40px;
+}
+
+.tab_container {
+  padding-bottom: 1em;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.tab_item {
+  width: calc(100%/3);
+  padding:15px 0;
+  border-bottom: 1px solid  #d0d6d6 ;
+  text-align: center;
+  color:  #878f8f ;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+input[name="tab_item"] {
+  display: none;
+}
+
+.tab_content {
+  display: none;
+  padding: 1em 1em 0;
+  clear: both;
+  overflow: hidden;
+}
+
+#tab1:checked ~ #tab1_content,
+#tab2:checked ~ #tab2_content,
+#tab3:checked ~ #tab3_content {
+  display: block;
+}
+
+.tab_container input:checked + .tab_item {
+  background-color: #e6a51a96 ;
+  color: #fff;
 }
 // 投稿詳細
 
