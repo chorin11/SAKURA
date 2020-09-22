@@ -43,7 +43,7 @@
         <div class="tab_content_description">
           <div class="c-txtsp">
             <% @post_images.each do |post_image| %>
-              <div class="card">
+              <div class="card col-lg-3", style="margin:15px;">
                 <div class="text-center card-img">
                   <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
                 </div>
@@ -64,7 +64,7 @@
             <% @user.following.each do |user| %>
               <table>
                 <tr class="text-center">
-                  <td><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/人物アイコン" %></td>
+                  <td><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/人物アイコン", class:"icon-img" %></td>
                   <td><%= user.name %></td>
                   <td><%= link_to '詳細', user_path(user) %></td>
                 </tr>

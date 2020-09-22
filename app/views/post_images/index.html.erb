@@ -17,8 +17,8 @@
           <div class="col-lg-3">
             <div class="card">
             <%= link_to user_path(post_image.user_id), data: {"turbolinks" => false} do %>
-              <div class="text-center">
-                <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"profile-img-circle", size:"20x20" %>
+              <div class="text-center", style="padding-top:15px;">
+                <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"icon-img", size:"20x20" %>
                 <%= post_image.user.name %>
               <% end %>
               </div>
@@ -28,11 +28,11 @@
                 </div>
               <% end %>
 
-              <div class="text-center">
+              <div class="text-center", style="padding-top:15px;">
                 <%= post_image.introduction.truncate(10) %>
               </div>
 
-              <div class="text-center">
+              <div class="text-center", style="padding:10px 5px;">
                 <div id="index_favorite_<%= post_image.id %>">
                   <%= render 'favorites/favorite', post_image: post_image %>
                 </div>
