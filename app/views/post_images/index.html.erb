@@ -16,7 +16,7 @@
         <div class="new-form">
           <div class="col-lg-3">
             <div class="card">
-            <%= link_to user_path(post_image.user_id) do %>
+            <%= link_to user_path(post_image.user_id), data: {"turbolinks" => false} do %>
               <div class="text-center">
                 <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"profile-img-circle", size:"20x20" %>
                 <%= post_image.user.name %>

@@ -95,19 +95,23 @@ footer{
 }
 
 h1 {
-  position: relative;/*相対位置*/
-  padding-left: 1.2em;/*アイコン分のスペース*/
-  line-height: 1.4;/*行高*/
+  position: relative;
+  padding-left: 1.2em;
+  line-height: 1.4;
   font-family: monospace;
 }
 
 h1:before {
   font-family: "FontAwesome";
-  content: "\f075";/*アイコンのユニコード*/
+  content: "\f075";
   font-weight: 900;
-  position: absolute;/*絶対位置*/
-  font-size: 1em;/*サイズ*/
-  left: 0;/*アイコンの位置*/
-  top: 0;/*アイコンの位置*/
-  color: #643d7e; /*アイコン色*/
+  position: absolute;
+  font-size: 1em;
+  left: 0;
+  top: 0;
+  color: #643d7e; 
+}
+
+.icon-img{
+  border-radius: 50px;
 }

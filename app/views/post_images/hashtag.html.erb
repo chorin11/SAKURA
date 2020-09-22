@@ -1,31 +1,22 @@
 <div class="container">
   <div class="row">
     <% if params[:name] == nil %>
-
     <% else %>
-      <div class= "col-xs-12 col-lg-12 col-md-12 col-sm-12">
         <div class="hashtag-post-box">
-            <h3 class="search-title">#<%= @hashtag.hashname %>:  <%= @postimage.count %> 件 </h3>
+            <h3 class="search-title"></h3>
               <div class="flex-box">
                 <% @postimage.each do |postimage| %>
                   <div class= "post-image-index-post-box">
                     <p class="index-post-box-top">
                       <%= postimage.created_at.strftime("%Y/%m/%d") %>
                     </p>
-                    <span class='far fa-comments index-comment-count' id='comment-count_<%= postimage.id %>' style="color: #777777;">
-                      
-                    </span>
 
                     <span id = "favorite-button_<%= postimage.id %>"class="post-box-top-favorite">
                       <%= render 'favorites/favorite',post_image: postimage %>
                     </span>
                       <%= link_to post_image_path(postimage),data: {"turbolinks" => false}  do %>
                         <ul class="slider">
-                          <% @postimage.each do |post| %>
-                            <li>
-                              <%= attachment_image_tag post, :image ,size:'430x360', format:'jpg',class:"image" %>
-                            </li>
-                          <% end %>
+                          <%= attachment_image_tag postimage, :image ,size:'200x200', format:'jpg',class:"image" %>                           
                         </ul>
                       <% end %>
                       <p class="hashtag-post-box-name">
@@ -47,7 +38,6 @@
         <div class="image-index-pagination" data-turbolinks="false">
           <%= paginate @postimage,class:"paginate" %>
         </div>
-      </div>
     <% end %>
   </div>
   <div class="row">
