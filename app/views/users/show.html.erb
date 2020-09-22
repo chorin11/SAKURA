@@ -36,9 +36,9 @@
       <input id="tab1" type="radio" name="tab_item" checked>
       <label class="tab_item" for="tab1">投稿<%= @post_images.count %>件</label>
       <input id="tab2" type="radio" name="tab_item">
-      <div class="tab_item" id="follow_box" for="tab2">フォロー<%= @user.following.count %>人</div>
+      <label class="tab_item" id="follow_box" for="tab2">フォロー<%= @user.following.count %>人</label>
       <input id="tab3" type="radio" name="tab_item">
-      <div class="tab_item" id="follower_box" for="tab3">フォロワー<%= @user.followers.count %>人</div>
+      <label class="tab_item" id="follower_box" for="tab3">フォロワー<%= @user.followers.count %>人</label>
       <div class="tab_content" id="tab1_content">
         <div class="tab_content_description">
           <div class="c-txtsp">
@@ -60,11 +60,11 @@
       </div>
       <div class="tab_content" id="tab2_content">
         <div class="tab_content_description">
-          <div class="c-txtsp">
+          <div>
             <% @user.following.each do |user| %>
               <table>
-                <tr class="text-center">
-                  <td><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/人物アイコン", class:"icon-img" %></td>
+                <tr>
+                  <td class="icon"><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/人物アイコン", class:"icon-img" %></td>
                   <td><%= user.name %></td>
                   <td><%= link_to '詳細', user_path(user) %></td>
                 </tr>
@@ -75,11 +75,11 @@
       </div>
       <div class="tab_content" id="tab3_content">
         <div class="tab_content_description">
-          <div class="c-txtsp">
+          <div>
             <% @user.followers.each do |user| %>
               <table>
                 <tr>
-                  <td><%= attachment_image_tag user, :profile_image_id, size: '40x40', fallback: "/assets/人物アイコン" %></td>
+                  <td class="icon"><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/人物アイコン", class:"icon-img" %></td>
                   <td><%= user.name %></td>
                   <td><%= link_to '詳細', user_path(user) %></td>
                 </tr>              
