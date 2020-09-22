@@ -2,34 +2,29 @@
   <div class="new-post">
   <h1>投稿詳細</h1>
     <div class="row">
+      <div class="card-show">    
+        <%= attachment_image_tag @post_image, :image, size:"300x300",class: "coffee_image_media card-img-show" %>
 
-
-      <div class="card-show">
-        <div class="row">
-          <div class="card-img-show col-lg-1">
-            <%= attachment_image_tag @post_image, :image, size:"300x300",class: "coffee_image_media" %><br>
+        <div class="card-show-text">
+          <div class="card-name">
+            <%= attachment_image_tag @post_image.user, :profile_image, fallback: "/assets/人物アイコン", size:"25x25" ,class:"icon-img" %>
+            <%= @post_image.user.name %>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="card-show-text col-lg-8">
+          <div>
             <%= @post_image.introduction %>
-            <div id="show_favorite_<%= @post_image.id %>">
-              <%= render 'favorites/favorite', post_image: @post_image %>
-            </div>
-
-            <div><%= render_with_hashtags(@post_image.hashbody) %></div>
-
-            <div class="card-name">
-              <%= attachment_image_tag @post_image.user, :profile_image, fallback: "/assets/人物アイコン", size:"25x25" %>
-              <%= @post_image.user.name %>
-            </div>
-
-            <% if @user.id == current_user.id %>
-              <%= link_to "編集する", edit_post_image_path(@post_image) %>
-              <%= link_to "削除する", post_image_path(@post_image), method: :delete %>
-            <% end %>
           </div>
+
+          <div><%= render_with_hashtags(@post_image.hashbody) %></div>
+
+          <div id="show_favorite_<%= @post_image.id %>">
+            <%= render 'favorites/favorite', post_image: @post_image %>
+          </div>
+
+          <% if @user.id == current_user.id %>
+            <%= link_to "編集する", edit_post_image_path(@post_image) %>
+            <%= link_to "削除する", post_image_path(@post_image), method: :delete %>
+          <% end %>          
         </div>
       </div>
     </div>

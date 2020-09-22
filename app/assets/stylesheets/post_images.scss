@@ -32,7 +32,7 @@
   box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
   transition: .3s;
   margin-top: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .card:hover {
@@ -48,7 +48,7 @@
 
 // 投稿詳細
 .card-show {
-  width: 750px;
+  width: 800px;
   margin-left: 200px;
   margin-top: 40px;
   background: #fff;
@@ -68,14 +68,11 @@
 }
 
 .comment-btn{
-  margin-left: 550px;
-  margin-top: 30px;
+  margin: 30px auto 30px 550px;
 }
 
 .card-img-show{
-  margin-top: 40px;
-  margin-right: 80px;
-  margin-bottom: 40px;
+  margin: 40px 100px 40px 0;
 }
 
 .tab_container {
@@ -119,7 +116,7 @@ input[name="tab_item"] {
 }
 
 .tab_container input:checked + .tab_item {
-  background-color: #e6a51a96 ;
+  background-color: #c0500fa4 ;
   color: #fff;
 }
 // 投稿詳細

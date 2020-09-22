@@ -7,7 +7,7 @@
     <li class="comment-container">
       <div class="comment-box">
         <div class="comment-avatar">
-          <%= attachment_image_tag comment.user, :profile_image, fallback: "/assets/人物アイコン", class:"comment-image", size: "30x30" %>
+          <%= attachment_image_tag comment.user, :profile_image, fallback: "/assets/人物アイコン", class:"comment-image", size: "30x30",class:"icon-img" %>
         </div>
 
         <div class="comment-text">
@@ -36,7 +36,7 @@
       <li class="comment-container">
         <div class="comment-box">
           <div class="comment-avatar">
-            <%= attachment_image_tag comment.user, :profile_image, fallback: "/assets/人物アイコン", class:"comment-image", size: "30x30" %>
+            <%= attachment_image_tag comment.user, :profile_image, fallback: "/assets/人物アイコン", class:"comment-image", size: "30x30", class:"icon-img" %>
           </div>
           <div class="comment-text">
             <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
@@ -51,6 +51,7 @@
             <span class="comment-date pull-right">
               <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
             </span>
+            <hr>
           </div>
         </div>
       </li>

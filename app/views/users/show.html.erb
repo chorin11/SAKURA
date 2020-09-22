@@ -9,14 +9,14 @@
     </div>
 
   <div class="mypage-container col-lg-10">
-    <div class="col-lg-3 mypage-img">
-      <%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "/assets/人物アイコン" %>
+    <div class="col-lg-3">
+      <%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "/assets/人物アイコン", class:"mypage-img" %>
     </div>
 
     <div class="col-lg-5">
       <h4>自己紹介文</h4>
       <%= @user.introduction %>
-      <hr>
+      <div class="mypage-line"></div>
       <h4>好きな和菓子</h4>
       <%= @user.favorite_sweets %>
     </div>
@@ -34,16 +34,16 @@
   <div class="row">
     <div class="tab_container">
       <input id="tab1" type="radio" name="tab_item" checked>
-      <label class="tab_item" for="tab1">投稿</label>
+      <label class="tab_item" for="tab1">投稿<%= @post_images.count %>件</label>
       <input id="tab2" type="radio" name="tab_item">
-      <label class="tab_item" for="tab2">フォロー<%= @user.following.count %>人</label>
+      <div class="tab_item" id="follow_box" for="tab2">フォロー<%= @user.following.count %>人</div>
       <input id="tab3" type="radio" name="tab_item">
-      <label class="tab_item" for="tab3">フォロワー<%= @user.followers.count %>人</label>
+      <div class="tab_item" id="follower_box" for="tab3">フォロワー<%= @user.followers.count %>人</div>
       <div class="tab_content" id="tab1_content">
         <div class="tab_content_description">
           <div class="c-txtsp">
             <% @post_images.each do |post_image| %>
-              <div class="card">
+              <div class="card col-lg-3", style="margin:15px;">
                 <div class="text-center card-img">
                   <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
                 </div>
@@ -64,7 +64,7 @@
             <% @user.following.each do |user| %>
               <table>
                 <tr class="text-center">
-                  <td><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/人物アイコン" %></td>
+                  <td><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/人物アイコン", class:"icon-img" %></td>
                   <td><%= user.name %></td>
                   <td><%= link_to '詳細', user_path(user) %></td>
                 </tr>

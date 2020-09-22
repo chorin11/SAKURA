@@ -1,29 +1,36 @@
-<% if @user_or_post =="1" %>
-  <h1>ユーザ</h1>
-  <table>
-    <% @users.each do |user| %>
-      <thead>
-        <tr>
-          <th><%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, fallback: "/assets/人物アイコン" %></th>
-          <th><%= user.name %></th>
-          <td><%=link_to "見る" ,user_path(user.id) %></td>
-        </tr>
-      </thead>
-    <% end %>
-  </table>
+<div class="container">
+  <div class="row">
 
-<% elsif @user_or_post =="2" %>
-  <h2>投稿</h2>
-    <table>
-      <% @posts.each do |post| %>
-        <thead>
-          <tr>
-            <th><%= attachment_image_tag @post_image, :image, size:"150x150",class: "coffee_image_media" %></th>
-            <th><%= post.introduction %></th>
-            <td><%=link_to "見る" ,post_image_path(post.id) %></td>
-          </tr>
-        </thead>
-      <% end %>
-    </table>
-<% else %>
-<% end %>
+    <% if @user_or_post =="1" %>
+      <h1>ユーザ</h1>
+      <table>
+        <% @users.each do |user| %>
+          <thead>
+            <tr>
+              <th><%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, fallback: "/assets/人物アイコン" %></th>
+              <th><%= user.name %></th>
+              <td><%=link_to "見る" ,user_path(user.id) %></td>
+            </tr>
+          </thead>
+        <% end %>
+      </table>
+
+    <% elsif @user_or_post =="2" %>
+      <h1>投稿</h1>
+        <table>
+          <% @posts.each do |post| %>
+            <div class="card text-center col-lg-3" style="margin:15px;">
+              <p class="index-post-box-top">
+                <%= post.created_at.strftime("%Y/%m/%d") %>
+              </p>
+              <%= attachment_image_tag post, :image, size:"160x160",class: "coffee_image_media" %>
+              <%= post.introduction %>
+              <%=link_to "詳細" ,post_image_path(post.id) %>        
+            </div>
+          <% end %>
+        </table>
+    <% else %>
+    <% end %>
+
+  </div>
+</div>
