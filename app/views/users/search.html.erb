@@ -1,47 +1,63 @@
 <div class="container">
   <div class="row">
 
-  <div class="col-lg-8">
-    <% if @user_or_post =="1" %>
-      <h1>ユーザ</h1>
-      <table class="col-xs-offset-3", style="margin-bottom: 40px;">
-        <thead>
-          <tr>
-            <th></th>
-            <th>ニックネーム</th>
-            <th>好きな和菓子</th>
-            <th></th>
-          </tr>
-        </thead>
-        <% @users.each do |user| %>
-          <tbody>
+    <div class="col-lg-8">
+      <% if @user_or_post =="1" %>
+        <h1>ユーザ</h1>
+        <table class="col-xs-offset-3", style="margin-bottom: 40px;">
+          <thead>
             <tr>
-              <th class="icon"><%= attachment_image_tag @user, :profile_image_id, size:"40x40", fallback: "/assets/人物アイコン", class:"icon-img" %></th>
-              <th><%= user.name %></th>
-              <th><%= user.favorite_sweets %></th>
-              <td><%=link_to "詳細を見る", user_path(user.id) %></td>
+              <th></th>
+              <th>ニックネーム</th>
+              <th>好きな和菓子</th>
+              <th></th>
             </tr>
-          </tbody>
-        <% end %>
-      </table>
-  </div>
-
-    <% elsif @user_or_post =="2" %>
-      <h1>投稿</h1>
-        <table>
-          <% @posts.each do |post| %>
-            <div class="card text-center col-lg-3" style="margin:15px;">
-              <p class="index-post-box-top">
-                <%= post.created_at.strftime("%Y/%m/%d") %>
-              </p>
-              <%= attachment_image_tag post, :image, size:"160x160",class: "coffee_image_media" %>
-              <%= post.introduction %>
-              <%=link_to "詳細" ,post_image_path(post.id) %>        
-            </div>
+          </thead>
+          <% @users.each do |user| %>
+            <tbody>
+              <tr>
+                <th class="icon"><%= attachment_image_tag @user, :profile_image_id, size:"40x40", fallback: "/assets/人物アイコン", class:"icon-img" %></th>
+                <th><%= user.name %></th>
+                <th><%= user.favorite_sweets %></th>
+                <td><%=link_to "詳細を見る", user_path(user.id) %></td>
+              </tr>
+            </tbody>
           <% end %>
         </table>
-    <% else %>
-    <% end %>
+    </div>
+  </div>
 
+  <div class="row">
+    <% elsif @user_or_post =="2" %>
+      <h1>投稿</h1>
+        <% @posts.each do |post| %>            
+          <div class="card col-lg-3 text-center", style="margin-right:50px;">
+            <p class="index-post-box-top">
+              <%= post.created_at.strftime("%Y/%m/%d") %>
+            </p>
+            <%= link_to user_path(post.user_id), data: {"turbolinks" => false} do %>
+              <div class="text-center", style="padding-top:15px;">
+                <%= attachment_image_tag post.user, :profile_image, fallback: "/assets/人物アイコン", class:"icon-img", size:"20x20" %>
+                <%= post.user.name %>
+              </div>
+            <% end %>
+            <%= link_to post_image_path(post) do %>
+              <div class="text-center card-img">
+                <%= attachment_image_tag post, :image, size:"160x160",class: "coffee_image_media" %><br>
+              </div>
+            <% end %>      
+            <div class="text-center", style="padding-top:15px;">
+              <%= post.introduction.truncate(10) %>
+            </div>
+            <div class="text-center", style="padding:10px 5px;">
+              <div id="index_favorite_<%= post.id %>">
+                <%= render 'favorites/favorite', post_image: post %>
+              </div>
+            </div>
+            <%=link_to "詳細" ,post_image_path(post.id) %>
+          </div>
+        <% end %>
+      <% else %>
+      <% end %> 
   </div>
 </div>
