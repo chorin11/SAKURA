@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # 管理者
   devise_for :admins, controllers: {
     sessions:'admins/sessions',
     passwords:'admins/passwords',
@@ -7,9 +8,12 @@ Rails.application.routes.draw do
   }
 
   namespace :admins do
+    resources :users, only: [:index, :edit, :show, :update]
+    resources :post_images, only: [:index, :show]
     get '/top' => "homes#top"
   end
 
+  # ユーザ
   root 'homes#top'
 
   get "search" => "users#search"

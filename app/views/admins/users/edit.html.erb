@@ -1,0 +1,39 @@
+<h1><%= @user.name %>さんの会員情報編集</h1>
+<div class="container">
+    <div class="row">
+        <div class ="col-xs-5 col-xs-offset-1">
+        <%= form_with model:[:admins,@user], local: true do |f| %>
+            <table class="table">
+                <tr>
+                    <td>
+                        <%= f.label :id, 'ユーザID' %>
+                    </td>
+                    <td><%= @user.id %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :name, 'ニックネーム' %></td>
+                    <td><%= f.text_field :name%></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :introduction, '自己紹介' %></td>
+                    <td><%= f.text_area :introduciton %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :favorite_sweets, '好きな和菓子' %></td>
+                    <td><%= f.text_field :favorite_sweets %></td>
+                </tr>
+                    <td><%= f.label :email, 'メールアドレス' %></td>
+                    <td><%= f.email_field :email %></td>
+                </tr>
+                    <td><%= f.label :is_deleted, '会員ステータス' %></td>
+                    <td>                   
+                        <span>有効</span><%= f.radio_button :is_deleted, :false %>
+                        <span>退会済み</span><%= f.radio_button :is_deleted, :true %>
+                    </td>
+                </tr>
+            </table>
+            <%= f.submit "変更を保存する" %>
+        <% end %>
+        </div>
+    </div>
+</div>
