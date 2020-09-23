@@ -18,7 +18,15 @@ class UsersController < ApplicationController
   def unsubscrilbe
   end
 
-  def withdrow
+  def withdraw
+  end
+
+  def withdraw_done
+    @user = current_user
+    @user.update(is_deleted: true)
+    reset_session
+    flash[:notice] = 'ありがとうございました。またのご利用をお待ちしております。'
+    redirect_to user_top_path
   end
 
   def search
