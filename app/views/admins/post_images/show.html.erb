@@ -11,11 +11,13 @@
             <%= @post_image.user.name %>
           </div>
 
-          <div>
+          <div style="margin-bottom:30px;">
             <%= @post_image.introduction %>
           </div>
 
-          <div><%= render_with_hashtags(@post_image.hashbody) %></div>
+          <div style="margin-bottom:30px;">
+            <%= render_with_hashtags(@post_image.hashbody) %>
+          </div>
 
           <div id="show_favorite_<%= @post_image.id %>">
             <%= render 'favorites/favorite', post_image: @post_image %>

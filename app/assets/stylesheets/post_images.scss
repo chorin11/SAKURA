@@ -56,7 +56,6 @@
   box-shadow: 0 2px 5px #ccc;
   display:flex;
   justify-content:center;
-  align-items: center;
 }
 
 .comment{
@@ -64,7 +63,7 @@
 }
 
 .card-name{
-  margin-bottom: 30px;
+  margin: 40px auto 30px auto;
 }
 
 .comment-btn{

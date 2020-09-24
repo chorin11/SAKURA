@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class = "col-xs-10 col-xs-offset-1">
-            <table class="table">
+            <table>
                 <thead>
                     <tr>
                         <th>投稿ID</th>
@@ -15,9 +15,9 @@
                     <% @post_images.each do |post| %>
                         <tr>
                             <td><%= post.id %></td>
-                            <td><%= attachment_image_tag post, :image, size:"100x100",class: "coffee_image_media" %></td>
+                            <td><%= attachment_image_tag post, :image, size:"70x70",class: "coffee_image_media" %></td>
                             <td><%= link_to post.user.name,admins_post_image_path(post.id) %></td>
-                            <td><%= post.introduction %></td>
+                            <td><%= post.introduction.truncate(10) %></td>
                         </tr>
                     <% end %>
                 </tbody>
