@@ -16,8 +16,8 @@
                         <tr>
                             <td><%= post.id %></td>
                             <td><%= attachment_image_tag post, :image, size:"70x70",class: "coffee_image_media" %></td>
-                            <td><%= link_to post.user.name,admins_post_image_path(post.id) %></td>
-                            <td><%= post.introduction.truncate(10) %></td>
+                            <td><%= post.user.name %></td>
+                            <td><%= link_to post.introduction.truncate(10),admins_post_image_path(post.id) %></td>
                         </tr>
                     <% end %>
                 </tbody>

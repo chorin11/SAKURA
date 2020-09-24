@@ -1,6 +1,6 @@
 class PostImagesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @post_images = PostImage.order(created_at: :desc).limit(8)
     @post_total = @post_images.page(params[:page])
