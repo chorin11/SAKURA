@@ -22,9 +22,10 @@
 }
 
 body {
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: rgba(247, 240, 245, 0.247);
+  background-image: url('背景３.jpg');
+  font-family: YuGothic;
 }
+
 
 // ヘッダー
 header {
@@ -69,13 +70,7 @@ nav{
 }
 // ヘッダー
 
-.wrapper{
-  min-height: 100vh;
-  position: relative;
-  box-sizing: border-box;
-  padding-bottom: 40px;
-}
-
+// フッター
 footer{
   font-size: 20px;
   width: 100%;
@@ -87,6 +82,14 @@ footer{
   background-color: rgba(83, 28, 65, 0.733);
   color: #e7d8d8;
 }
+// フッター
+
+.wrapper{
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
 
  f-text{
   color: #fff;
@@ -94,24 +97,14 @@ footer{
   font-style: normal;
 }
 
-h1 {
-  position: relative;
-  padding-left: 1.2em;
-  line-height: 1.4;
-  font-family: monospace;
-}
-
-h1:before {
-  font-family: "FontAwesome";
-  content: "\f075";
-  font-weight: 900;
-  position: absolute;
-  font-size: 1em;
-  left: 0;
-  top: 0;
-  color: #643d7e; 
+h3 {
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #7da2e6;/*左線*/
 }
 
 .icon-img{
   border-radius: 50px;
 }
+

@@ -1,10 +1,9 @@
 <div class="container">
   <div class="row">
-
-    <div class="col-lg-8">
+  
       <% if @user_or_post =="1" %>
-        <h1>ユーザ</h1>
-        <table class="col-xs-offset-3", style="margin-bottom: 40px;">
+        <h3>ユーザ</h3>
+        <table style="margin-bottom: 40px;">
           <thead>
             <tr>
               <th></th>
@@ -24,14 +23,13 @@
             </tbody>
           <% end %>
         </table>
-    </div>
   </div>
-
+  
   <div class="row">
     <% elsif @user_or_post =="2" %>
-      <h1>投稿</h1>
+      <h3>投稿</h3><br>
         <% @posts.each do |post| %>            
-          <div class="card col-lg-3 text-center", style="margin-right:50px;">
+          <div class="card col-lg-3 text-center", style="margin-right:30px;">
             <p class="index-post-box-top">
               <%= post.created_at.strftime("%Y/%m/%d") %>
             </p>

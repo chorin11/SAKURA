@@ -1,7 +1,7 @@
 <div class="continer">
   <div class="row">
   
-    <h1 class="col-xs-offset-1"><%= @user.name %>さんのページ</h1>
+    <h3 class="col-xs-offset-2"><%= @user.name %>さんのページ</h3>
     <div class="col-lg-2">
       <% if @user.id == current_user.id %>
         <%= link_to "プロフィール編集", edit_user_path(@user), class:"btn btn-info col-xs-offset-11 mypage-btn" %>
@@ -9,7 +9,7 @@
       <% end %>
     </div>
 
-  <div class="mypage-container col-lg-10">
+  <div class="mypage-container col-lg-8">
     <div class="col-lg-3">
       <%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "/assets/人物アイコン", class:"mypage-img" %>
     </div>

@@ -1,5 +1,5 @@
 
 <%= form_with(model: [post_image, comment]) do |f| %>
-  <%= f.text_area :post_comment, class:"form-control" %>
-  <%= f.submit"送信", class:"btn btn-warning disabled btn-lg comment-btn" %>
+  <%= f.text_area :post_comment, class:"form-control col-lg-5" %>
+  <%= f.submit"送信", class:"btn btn-warning btn-lg comment-btn col-lg-3" %>
 <% end %>

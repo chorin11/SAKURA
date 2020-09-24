@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -29,12 +30,13 @@
             <% elsif admin_signed_in? %>
               <li><%= link_to"ユーザ一覧", admins_users_path, class:"nav-icon" %></li>
               <li><%= link_to"投稿一覧", admins_post_images_path, class:"nav-icon" %></li>
-              <li><%= link_to"ログアウト", destroy_admin_session_path, class:"nav-icon" %></li>
+              <li><%= link_to"ログアウト", destroy_admin_session_path, method: :delete, class:"nav-icon" %></li>
             <% else %>
               <li><%= link_to"サイトのご案内", user_about_path, class:"nav-icon" %></li>
               <li><%= link_to "ゲストログイン", homes_guest_sign_in_path, method: :post, class:"nav-icon" %></li>
               <li><%= link_to"新規登録", new_user_registration_path, class:"nav-icon" %></li>
               <li><%= link_to"ログイン", user_session_path, class:"nav-icon" %></li>
+              <li><%= link_to"管理者ログイン", admin_session_path, class:"nav-icon" %></li>
             <% end %>
           </ul>
         </nav>

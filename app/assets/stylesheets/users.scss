@@ -19,10 +19,23 @@
   border-radius: 50%;
 }
 
+.user-withdraw{
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+  transition: .3s;
+  padding: 50px;
+  margin: 150px auto auto 300px;
+}
+
+// マイページ
 .mypage-img{
   border-radius: 50%;
 }
 
+.mypage-btn{
+  margin-left:250px;
+}
 .mypage-line{
   border-bottom: 2px solid  #686d6d ;
   margin: 20px auto;
@@ -36,30 +49,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  margin-left: 180px;
+  margin: 20px auto 50px 250px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+  transition: .3s;
+  padding: 50px;
 }
 
 .mypage-post{
   margin-bottom: 40px;
 }
 
+// マイページ
+
+// ユーザログイン関係
 .card-login{
   width: 900px;
-  margin-top: 150px;
-  margin-left: 130px;
-  padding-bottom: 50px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
-	transition: .3s;
-}
-
-.card-profile{
-  width: 900px;
-  margin-top: 150px;
-  margin-left: 130px;
+  margin: 150px auto auto 130px;
   padding-bottom: 50px;
   background: #fff;
   border-radius: 5px;
@@ -69,8 +76,18 @@
 
 .card-signin{
   width: 900px;
-  margin-top: 50px;
-  margin-left: 250px;
+  margin: 50px auto 50px 250px;
+  padding-bottom: 50px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+	transition: .3s;
+}
+// ユーザログイン関係
+
+.card-profile{
+  width: 900px;
+  margin-top: 50px auto auto 180px;
   padding-bottom: 50px;
   background: #fff;
   border-radius: 5px;
@@ -78,11 +95,15 @@
 	transition: .3s;
 }
 
-// ユーザ詳細画面タブ
+// テーブル
 table{
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+	transition: .3s;
 }
 
 table tr{
@@ -106,4 +127,51 @@ table td.icon{
   background-repeat: no-repeat;
   padding-left: 30px;
 }
-// ユーザ詳細画面タブ
+// テーブル
+  
+// マイページタブ
+.tab_container {
+  padding-bottom: 1em;
+  background-color: #fff;
+  margin: 0 auto 50px auto;
+}
+
+.tab_item {
+  width: calc(100%/3);
+  padding:15px 0;
+  border-bottom: 1px solid  #d0d6d6 ;
+  text-align: center;
+  color:  #878f8f ;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+input[name="tab_item"] {
+  display: none;
+}
+
+.tab_content {
+  display: none;
+  padding: 1em 1em 0;
+  clear: both;
+  overflow: hidden;
+}
+
+#tab1:checked ~ #tab1_content,
+#tab2:checked ~ #tab2_content,
+#tab3:checked ~ #tab3_content {
+  display: block;
+}
+
+.tab_container input:checked + .tab_item {
+  background-color: #c0500fa4 ;
+  color: #fff;
+}
+// マイページタブ

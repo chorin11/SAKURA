@@ -43,88 +43,55 @@
 .card-img{
   padding-top: 20px;
 }
-
 // 投稿記事
 
 // 投稿詳細
+.post-show{
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+  transition: .3s;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin: 50px 80px;
+}
 .card-show {
   width: 800px;
-  margin-left: 200px;
+  margin-left: 75px;
   margin-top: 40px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
   display:flex;
   justify-content:center;
-  align-items: center;
 }
 
-.comment{
+.comment {
   margin-top: 30px;
 }
 
-.card-name{
-  margin-bottom: 30px;
+.card-name {
+  margin: 40px auto 30px auto;
 }
 
-.comment-btn{
-  margin: 30px auto 30px 550px;
+.comment-btn {
+  margin: 30px auto 30px 350px;
 }
 
-.card-img-show{
+.card-img-show {
   margin: 40px 100px 40px 0;
-}
-
-.tab_container {
-  padding-bottom: 1em;
-  background-color: #fff;
-  margin: 0 auto;
-}
-
-.tab_item {
-  width: calc(100%/3);
-  padding:15px 0;
-  border-bottom: 1px solid  #d0d6d6 ;
-  text-align: center;
-  color:  #878f8f ;
-  display: block;
-  float: left;
-  text-align: center;
-  font-weight: bold;
-  transition: all 0.2s ease;
-
-}
-.tab_item:hover {
-  opacity: 0.75;
-}
-
-input[name="tab_item"] {
-  display: none;
-}
-
-.tab_content {
-  display: none;
-  padding: 1em 1em 0;
-  clear: both;
-  overflow: hidden;
-}
-
-#tab1:checked ~ #tab1_content,
-#tab2:checked ~ #tab2_content,
-#tab3:checked ~ #tab3_content {
-  display: block;
-}
-
-.tab_container input:checked + .tab_item {
-  background-color: #c0500fa4 ;
-  color: #fff;
 }
 // 投稿詳細
 
 // 新規投稿
 .new-post
 {
-  margin-top: 50px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+  transition: .3s;
+  padding: 30px 50px;
 }
 
 .new-form{
@@ -140,3 +107,18 @@ input[name="tab_item"] {
   margin-left: 500px;
 }
 // 新規投稿
+
+// 投稿編集
+.edit-post{
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+  transition: .3s;
+  padding: 30px 50px;
+  margin: 50px 100px;
+}
+
+.edit-post-btn{
+  margin: 30px auto auto 300px;
+}
+// 投稿編集
