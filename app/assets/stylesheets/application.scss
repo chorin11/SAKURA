@@ -95,7 +95,20 @@ footer{
 }
 
 h1 {
+  color: #131111;
+  padding: 0.5em;
+  display: inline-block;
+  line-height: 1.3;
+  background: #ec9f81;
+  vertical-align: middle;
+  border-radius: 25px 0px 0px 25px;
   font-family: "Hannari";
+}
+  
+h1:before {
+  content: '●';
+  color: white;
+  margin-right: 8px;
 }
 
 .icon-img{
