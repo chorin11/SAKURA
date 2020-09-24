@@ -2,7 +2,7 @@
   <div class="row">
   
       <% if @user_or_post =="1" %>
-        <h1>ユーザ</h1>
+        <h3>ユーザ</h3>
         <table style="margin-bottom: 40px;">
           <thead>
             <tr>
@@ -27,7 +27,7 @@
   
   <div class="row">
     <% elsif @user_or_post =="2" %>
-      <h1>投稿</h1>
+      <h3>投稿</h3><br>
         <% @posts.each do |post| %>            
           <div class="card col-lg-3 text-center", style="margin-right:30px;">
             <p class="index-post-box-top">

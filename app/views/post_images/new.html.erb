@@ -13,7 +13,7 @@
   <div class="row">
     <%= form_with model: @post_image, url: post_images_path,data:{remote: false} do |f| %>
       <div class="new-post">
-        <h1>新規投稿</h1>
+        <h3>新規投稿</h3>
           <div class="new-form">
             <h4 class="new-form-text">画像</h4>
             <%= f.attachment_field :image %>

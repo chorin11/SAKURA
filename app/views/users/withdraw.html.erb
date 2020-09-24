@@ -1,19 +1,21 @@
-<div class="container" style="width: 500px;">
-  <div class="row" style="width: 500px;">
-    <h1 class="col-lg-offset-1">本当に退会しますか？</h1>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6  user-withdraw">
+      <h3 class="col-lg-offset-3">本当に退会しますか？</h3>
 
-  <div class="row text-center", style="margin: 50px auto;">
-    <h4>退会すると、会員登録情報や
-      <br>これまでの購入履歴が閲覧できなくなります。
-      <br>退会する場合は、「退会する」をクリックしてください。
-    </h4>
-  </div>
+      <div class="row text-center", style="margin: 50px auto;">
+        <h4>退会すると、会員登録情報や
+          <br>これまでの購入履歴が閲覧できなくなります。
+          <br>退会する場合は、「退会する」をクリックしてください。
+        </h4>
+      </div>
 
-  <div class="row text-center" style="width: 400px">
-    <div class="col-8 col-lg-offset-2">
-      <%= link_to "退会しない",user_path(current_user),class: "btn btn-primary" %>
-      <%= link_to "退会する", withdraw_done_user_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>
+      <div class="text-center">
+        <div class="col-8">
+          <%= link_to "退会しない",user_path(current_user),class: "btn btn-primary" %>
+          <%= link_to "退会する", withdraw_done_user_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

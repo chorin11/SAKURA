@@ -1,14 +1,13 @@
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <div class="panel panel-default col-lg-10 col-xs-offset-1">
-      <div class="panel-heading clearfix">
-        <h3 class="panel-title">投稿を編集する</h3>
-      </div>
+    <div class="edit-post col-lg-10">
+      <h1>投稿を編集する</h1>
 
-      <div class="panel-body user-profile">
+      <div class="user-profile">
         <%= form_with model: @post_image, data:{remote: false} do |f| %>
-          <h4>画像</h4>
-          <div class="col-xs-offset-4">
+          <h4 class="col-xs-offset-5">画像</h4>
+          <div class="col-xs-offset-5">
+            <%= attachment_image_tag @post_image, :image, size:"200x200",class: "coffee_image_media card-img-show" %>
             <%= f.attachment_field :image %>
           </div>
       
@@ -18,7 +17,9 @@
           <h4>ハッシュタグ入力欄</h4>
           <%= f.text_area :hashbody, class:"form-control" %>
 
-          <div><%= f.submit "変更を保存する", class:"btn btn-primary" %></div>
+          <div class="edit-post-btn">
+            <%= f.submit "変更を保存する", class:"btn btn-info col-lg-5" %>
+          </div>
         <% end %>
       </div>
     </div>
