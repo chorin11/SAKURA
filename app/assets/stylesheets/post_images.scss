@@ -122,3 +122,80 @@
   margin: 30px auto auto 300px;
 }
 // 投稿編集
+
+@media screen and (max-width:425px){
+  header footer{
+    width: 100%;
+  }
+
+  .new-form-btn{
+    margin-left: 200px;
+  }
+
+  .new-form-btn{
+    margin: 30px 370px;
+  }
+
+  .card-show{
+    width: 250px;
+    margin-left: 30px;
+  }
+
+  .card-img-show{
+    width: 30%;
+    max-width: 30%;
+    height: 30%;
+  }
+  .post-show{
+    width: 300px;
+    margin: 50px auto 70px auto;
+  }
+
+  .comment-btn{
+    margin: 30px auto 30px 200px;
+  }
+}
+
+@media screen and (max-width:768px){
+  .new-form-btn{
+    margin-right: 400px;
+  }
+
+  .card-show{
+    width: 400px;
+    margin-left: 30px;
+  }
+
+  .card-img-show{
+    width: 50%;
+    max-width: 50%;
+    height: 50%;
+  }
+  .post-show{
+    margin-top: 100px;
+  }
+
+  .comment-btn{
+    margin: 30px auto 30px 250px;
+  }
+}
+
+@media screen and (max-width:1024px){
+  .new-form-btn{
+    margin: 30px 370px;
+  }
+
+  .card-show{
+    width: 730px;
+    margin-left: 30px;
+  }
+
+  .card-img-show{
+    width: 50%;
+    max-width: 50%;
+    height: 50%;
+  }
+  .post-show{
+    margin-top: 100px;
+  }
+}
