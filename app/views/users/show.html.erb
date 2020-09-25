@@ -2,7 +2,7 @@
   <div class="row">
   
     <h3 class="col-xs-offset-2"><%= @user.name %>さんのページ</h3>
-    <div class="col-lg-2">
+    <div class="col-lg-2 mypage-link">
       <% if @user.id == current_user.id %>
         <%= link_to "プロフィール編集", edit_user_path(@user), class:"btn btn-info col-xs-offset-11 mypage-btn" %>
         <%= link_to "退会ページ", withdraw_user_path(@user), class:"btn btn-warning col-xs-offset-11 mypage-btn",style:"margin-top:15px;" %>

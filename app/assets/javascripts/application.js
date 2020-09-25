@@ -50,3 +50,4 @@ $('.slide-dots li').on('click', function() {
   clearInterval()
   toggleSlide()
 })
+
