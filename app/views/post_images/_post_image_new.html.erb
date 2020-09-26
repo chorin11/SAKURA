@@ -7,7 +7,7 @@
             <%= attachment_image_tag post_image, :image, size:"150x150",class: "coffee_image_media" %><br>
             <div class="card-body>
               <%= link_to user_path(post_image.user_id) do %>
-                <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/人物アイコン", class:"profile-img-circle", size:"30x30" %>
+                <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/no-image-human.jpeg", class:"profile-img-circle", size:"30x30" %>
                 <%= post_image.user.name %>
               <% end %>
               <div id="index_favorite_<%= post_image.id %>">
