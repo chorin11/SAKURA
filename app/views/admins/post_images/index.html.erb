@@ -1,12 +1,13 @@
 <div class="container">
     <div class="row">
-        <div class = "col-xs-10 col-xs-offset-1">
+        <div class = "col-lg-10 col-xs-offset-1">
         <h3>投稿一覧</h3>
             <table>
                 <thead>
                     <tr>
                         <th>投稿ID</th>
                         <th>投稿画像</th>
+                        
                         <th>ニックネーム</th>
                         <th>投稿内容</th>
                     </tr>
@@ -16,7 +17,7 @@
                         <tr>
                             <td><%= post.id %></td>
                             <td><%= attachment_image_tag post, :image, size:"70x70",class: "coffee_image_media" %></td>
-                            <td><%= post.user.name %></td>
+                            <td><%= attachment_image_tag post.user, :profile_image, fallback: "no-image-human.jpeg", size:"25x25" ,class:"icon-img" %><%= post.user.name %></td>
                             <td><%= link_to post.introduction.truncate(10),admins_post_image_path(post.id) %></td>
                         </tr>
                     <% end %>

@@ -14,6 +14,10 @@
               </td>
             </tr>
             <tr>
+              <td>プロフィール画像</td>
+              <td><%= attachment_image_tag @user, :profile_image, fallback: "no-image-human.jpeg", size:"25x25" ,class:"icon-img" %></td>
+            </tr>
+            <tr>
               <td>ニックネーム</td>
               <td><%= @user.name %></td>
             </tr>

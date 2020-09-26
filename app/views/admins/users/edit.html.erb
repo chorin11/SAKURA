@@ -1,39 +1,47 @@
-<h3><%= @user.name %>さんの会員情報編集</h3>
 <div class="container">
+<h3><%= @user.name %>さんの会員情報編集</h3>
     <div class="row">
         <div class ="col-xs-5 col-xs-offset-1">
-        <%= form_with model:[:admins,@user], local: true do |f| %>
-            <table class="table">
-                <tr>
-                    <td>
-                        <%= f.label :id, 'ユーザID' %>
-                    </td>
-                    <td><%= @user.id %></td>
-                </tr>
-                <tr>
-                    <td><%= f.label :name, 'ニックネーム' %></td>
-                    <td><%= f.text_field :name%></td>
-                </tr>
-                <tr>
-                    <td><%= f.label :introduction, '自己紹介' %></td>
-                    <td><%= f.text_area :introduciton %></td>
-                </tr>
-                <tr>
-                    <td><%= f.label :favorite_sweets, '好きな和菓子' %></td>
-                    <td><%= f.text_field :favorite_sweets %></td>
-                </tr>
-                    <td><%= f.label :email, 'メールアドレス' %></td>
-                    <td><%= f.email_field :email %></td>
-                </tr>
-                    <td><%= f.label :is_deleted, '会員ステータス' %></td>
-                    <td>                   
-                        <span>有効</span><%= f.radio_button :is_deleted, :false %>
-                        <span>退会済み</span><%= f.radio_button :is_deleted, :true %>
-                    </td>
-                </tr>
-            </table>
-            <%= f.submit "変更を保存する" %>
-        <% end %>
+            <%= form_with model:[:admins,@user], local: true do |f| %>
+                <table class="table">
+                    <tr>
+                        <td>
+                            <%= f.label :id, 'ユーザID' %>
+                        </td>
+                        <td><%= @user.id %></td>
+                    </tr>
+
+                    <tr>
+                        <td><%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "no-image-human.jpeg", style:"margin-top: 10px",class:"mypage-img" %></td>
+                        <td><%= f.attachment_field :profile_image, placeholder: "プロフィール画像", style:"margin-top: 95px"  %><td>
+                    
+                    <tr>
+                        <td><%= f.label :name, 'ニックネーム' %></td>
+                        <td><%= f.text_field :name%></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label :introduction, '自己紹介' %></td>
+                        <td><%= f.text_area :introduciton %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label :favorite_sweets, '好きな和菓子' %></td>
+                        <td><%= f.text_field :favorite_sweets %></td>
+                    </tr>
+                        <td><%= f.label :email, 'メールアドレス' %></td>
+                        <td><%= f.email_field :email %></td>
+                    </tr>
+                        <td><%= f.label :is_deleted, '会員ステータス' %></td>
+                        <td>                   
+                            <span>有効</span><%= f.radio_button :is_deleted, :false %>
+                            <span>退会済み</span><%= f.radio_button :is_deleted, :true %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><%= f.submit "プロフィール情報の変更を保存", class:"btn btn-info" %></td>
+                        <td><%= f.submit "プロフィール画像を変更する", class:"btn btn-info" %></td>
+                    </tr>
+                </table>
+            <% end %>
         </div>
     </div>
 </div>

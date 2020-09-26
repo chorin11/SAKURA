@@ -6,7 +6,7 @@
       <div class="user-profile">
         <%= form_with model:@user do |user| %>
             <div class='profile-img col-lg-4 col-xs-offset-1'>
-              <%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "/assets/no-image-human.jpeg", style:"margin-top: 80px;",class:"mypage-img" %>
+              <%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "no-image-human.jpeg", style:"margin-top: 80px;",class:"mypage-img" %>
               <%= user.attachment_field :profile_image, placeholder: "プロフィール画像", style:"margin-top: 50px;"  %>
               <%= user.submit "プロフィール画像を変更する", class:"btn btn-info", style:"margin-top: 50px;" %>
             </div>
