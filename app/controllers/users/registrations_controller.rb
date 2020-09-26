@@ -8,7 +8,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
-
+  def create
+    super
+    @user = User.find_by(email: params[:user][:email])
+    if @user != nil
+      @user.name = params[:user][:name]
+      @user.introduction = params[:user][:introduction]
+      @user.favorite_sweets = params[:user][:favorite_sweets]
+      @user.save
+    end
+   end
   # POST /resource
   # def create
   #   super
@@ -59,4 +68,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  private
+  def user_params
+    params.require(:user).permit(:name, :introduction,:image, :email, :favorite_sweets, :profile_image)
+  end
 end
