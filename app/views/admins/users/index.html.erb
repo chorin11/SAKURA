@@ -15,7 +15,7 @@
                     <% @users.each do |user| %>
                         <tr>
                             <td><%= user.id %></td>
-                            <td><%= attachment_image_tag user, :profile_image, fallback: "no-image-human.jpeg", size:"25x25" ,class:"icon-img" %><%= link_to user.name,admins_user_path(user.id) %></td>
+                            <td><%= attachment_image_tag user, :profile_image, fallback: "no-image-human.jpg", size:"25x25" ,class:"icon-img" %><%= link_to user.name,admins_user_path(user.id) %></td>
                             <td><%= user.email %></td>
                             <td>
                             <% if user.is_deleted == true %>
