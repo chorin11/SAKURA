@@ -65,7 +65,7 @@
             <% @user.following.each do |user| %>
               <table>
                 <tr>
-                  <td class="icon"><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: "/assets/no-image-human.jpeg", class:"icon-img" %></td>
+                  <td class="icon"><%= attachment_image_tag user, :profile_image_id, size: '50x50', fallback: asset_path("no-image-human.jpeg"), class:"icon-img" %></td>
                   <td><%= user.name %></td>
                   <td><%= link_to '詳細', user_path(user) %></td>
                 </tr>
