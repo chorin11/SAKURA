@@ -49,7 +49,7 @@
                   <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
                 </div>
                 <div class="text-center">
-                  <%= post_image.introduction %><br>
+                  <%= post_image.introduction.truncate(10) %><br>
                 </div>
                 <div class="col-xs-offset-9">
                   <%= link_to "詳細", post_image_path(post_image.id) %><br>
