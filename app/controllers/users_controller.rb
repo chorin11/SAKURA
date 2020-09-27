@@ -23,12 +23,11 @@ class UsersController < ApplicationController
   def withdraw
   end
 
-  def withdraw_done
-    @user = current_user
-    @user.update(is_deleted: true)
-    reset_session
-    flash[:notice] = 'ありがとうございました。またのご利用をお待ちしております。'
-    redirect_to user_top_path
+  def destroy
+    @user = User.find(params[:id]) #特定のidを持つ情報を取得
+    @user.destroy
+    flash[:success] = 'ユーザーを削除しました。'
+    redirect_to :root #削除に成功すればrootページに戻る
   end
 
   def search

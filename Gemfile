@@ -77,6 +77,7 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'ransack'
 gem 'dotenv-rails'
+gem 'carrierwave'
 group :production do
   gem 'mysql2'
 end

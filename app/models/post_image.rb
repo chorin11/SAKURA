@@ -41,4 +41,6 @@ class PostImage < ApplicationRecord
   end
   # タグ付け機能
 
+  mount_uploader :image, ImageUploader
+
 end
