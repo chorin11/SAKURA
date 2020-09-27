@@ -1,56 +1,55 @@
 <div class="container">
-  <div class="row">
+<div class="row">
   <h3>プロフィール編集</h3>
     <div class="card-profile clearfix">
-
       <div class="user-profile">
-        <%= form_with model:@user do |user| %>
+        <div class="col-lg-6">
+          <%= form_with model:@user do |user| %>
             <div class='profile-img col-lg-4 col-xs-offset-1'>
               <%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "no-image-human.jpeg", style:"margin-top: 80px;",class:"mypage-img" %>
               <%= user.attachment_field :profile_image, placeholder: "プロフィール画像", style:"margin-top: 50px;"  %>
-              <%= user.submit "プロフィール画像を変更する", class:"btn btn-info", style:"margin-top: 50px;" %>
             </div>
-
-          <div class="form-group row">
-            <div class='col-lg-4 col-xs-offset-1', style="margin-top:20px;">
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group row" style="margin-top:50px;">
+            <div class='col-lg-4'">
               <h4><%= user.label :ニックネーム %></h4>
             </div>
-            <div class='col-lg-5 col-xs-offset-1'>
+            <div class='col-lg-8'>
               <%= user.text_field :name, class: 'form-control' %>
-            <div>
+            </div>
           </div>
 
           <div class="form-group row">
-            <div class='col-lg-5',  style="margin-top:20px;">
+            <div class='col-lg-4',  style="margin-top:20px;">
               <h4><%= user.label :メールアドレス %></h4>
             </div>
-            <div class='col-lg-7 col-xs-offset-1'>
+            <div class='col-lg-8'>
               <%= user.email_field :email, class: 'form-control' %>
             </div>
           </div>
 
           <div class="form-group row">
-            <div class='col-lg-5'>
+            <div class='col-lg-4'>
               <h4><%= user.label :自己紹介文 %></h4>
             </div>
-            <div class='col-lg-7 col-xs-offset-1'>
+            <div class='col-lg-8'>
               <%= user.text_area :introduction, class: 'form-control' %>
             </div>
           </div>
 
           <div class="form-group row">
-            <div class='col-lg-5'>
+            <div class='col-lg-4'>
               <h4><%= user.label :好きな和菓子 %></h4>
             </div>
-            <div class='col-lg-7 col-xs-offset-1'>
+            <div class='col-lg-8'>
               <%= user.text_field :favorite_sweets, class: 'form-control' %>
             </div>
           </div>
-
-          <%= user.submit "プロフィール内容を変更する", class:"btn btn-info col-lg-offset-1", style:"margin-top:10px;" %>
-        <% end %>
+          <%= user.submit "プロフィール内容を変更する", class:"btn btn-info", style:"margin-top: 50px;" %>
+        </div>
+          <% end %>
       </div>
-    
     </div>
   </div>
 </div>

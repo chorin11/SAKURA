@@ -39,6 +39,7 @@ Rails.application.routes.draw do
       get :following, :followers
       get :withdraw
       put :withdraw_done
+      patch "withdraw"
     end
   end
 

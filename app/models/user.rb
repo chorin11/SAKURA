@@ -44,18 +44,13 @@ class User < ApplicationRecord
   end
   # 検索機能
 
-  # ソート機能
-  def self.sort(selection)
-    case selection
-    when 'new'
-      return all.order(created_at: :DESC)
-    when 'old'
-      return all.order(created_at: :ASC)
-    when 'favorites'
-      return find(Favorites.group(:post_image_id).order(Arel.sql('count(post_image_id) desc')).pluck(:post_image_id))
-    when 'disfavorites'
-      return find(Favorites.group(:post_image_id).order(Arel.sql('count(post_image_id) asc')).pluck(:post_image_id))
-    end
-  end
-  # ソート機能
+  # ユーザー退会
+    # def active_for_authentication?
+    #   self.is_delete == false
+    # end
+  
+    # def inactive_message
+    #   "このアカウントは退会されています。"
+    # end
+  # ユーザー退会
 end
