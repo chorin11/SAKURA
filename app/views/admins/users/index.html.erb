@@ -18,11 +18,11 @@
                             <td><%= attachment_image_tag user, :profile_image, fallback: "no-image-human.jpg", size:"25x25" ,class:"icon-img" %><%= link_to user.name,admins_user_path(user.id) %></td>
                             <td><%= user.email %></td>
                             <td>
-                            <% if user.is_deleted == true %>
-                                <%= "退会済" %>
-                            <% else %>
-                                <%= "有効" %>  
-                            <% end %>
+                                <% if user.delete == true %>
+                                    <%= "退会済" %>
+                                <% else %>
+                                    <%= "有効" %>  
+                                <% end %>
                             </td>
                         </tr>
                     <% end %>

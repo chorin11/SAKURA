@@ -17,7 +17,10 @@
                         <tr>
                             <td><%= post.id %></td>
                             <td><%= attachment_image_tag post, :image, size:"70x70",class: "coffee_image_media" %></td>
-                            <td><%= attachment_image_tag post.user, :profile_image, fallback: "no-image-human.jpg", size:"25x25" ,class:"icon-img" %><%= post.user.name %></td>
+                            <td>
+                                <%= attachment_image_tag post.user, :profile_image, fallback: "no-image-human.jpg", size:"25x25" ,class:"icon-img" %>
+                                <%= post.user.name %>
+                            </td>
                             <td><%= link_to post.introduction.truncate(10),admins_post_image_path(post.id) %></td>
                         </tr>
                     <% end %>
