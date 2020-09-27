@@ -6,7 +6,7 @@
         <h3 class="search-title">#<%= @hashtag.hashname %>:  <%= @postimage.count %> 件 </h3>
           <div class="flex-box">
             <% @postimage.each do |postimage| %>
-              <div class="card text-center col-lg-4", style="margin:20px 30px;">
+              <div class="card card-index text-center col-lg-4", style="margin:20px 30px;">
                 <p class="index-post-box-top">
                   <%= postimage.created_at.strftime("%Y/%m/%d") %>
                 </p>
@@ -25,8 +25,8 @@
                   <% end %>
                 </p>
                 <div class="image-show-body-hash" style="padding:2%">
-                <%= simple_format(postimage.introduction.truncate(50))%>
-                <% if postimage.introduction.length > 50 %>
+                <%= simple_format(postimage.introduction.truncate(10))%>
+                <% if postimage.introduction.length > 10 %>
                   <span class="text-prev"><%= link_to '続きを読む', post_image_path(postimage), data: {"turbolinks" => false} %></span>
                 <% end %>
                 </div>
@@ -45,7 +45,7 @@
       <div class= "hashtag-name">
         <% @hashtags.sort.reverse.each do |count| %>
           <% count[1].each do |hashtag| %>
-            <p><%= link_to  "##{hashtag.hashname} (#{hashtag.post_images.count}) 件","/post_image/hashtag/#{hashtag.hashname}",data: {"turbolinks" => false} %></p>
+            <p><%= link_to  "##{hashtag.hashname} (#{hashtag.post_images.count}) 件","/post_image/hashtag/#{hashtag.hashname}",data: {"turbolinks" => false}, class:"hashtag-name" %></p>
           <% end %>
         <% end %>
       </div>

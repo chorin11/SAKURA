@@ -16,18 +16,17 @@
         <h3>新規投稿</h3>
           <div class="new-form">
             <h4 class="new-form-text">画像</h4>
-            <%= f.attachment_field :image %>
+            <%= f.attachment_field :image, class:"new-form-field" %>
             
             <h4 class="new-form-text">投稿内容</h4>
             <%= f.hidden_field :user_id, :value => current_user.id %>
-            <%= f.text_area :introduction, class:"form-control" %>
+            <%= f.text_area :introduction, class:"form-control new-form-field" %>
 
             <h4 class="new-form-text">ハッシュタグ入力欄</h4>
             <%= f.text_area :hashbody, class:"form-control" %>
 
-            <div class="new-form-btn">
-              <%= f.submit "投稿する", class:"btn btn-danger btn-lg" %>
-            </div>
+            <%= f.submit "投稿する", class:"btn btn-danger btn-lg new-form-btn new-form-field" %>
+            
           </div>
       </div>
     <% end %>

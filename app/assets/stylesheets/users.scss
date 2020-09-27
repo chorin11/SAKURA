@@ -180,7 +180,7 @@ input[name="tab_item"] {
 
   .card-login{
     width: 350px;
-    margin: 90px 50px auto 30px;
+    margin: 90px 50px 200px 30px;
   }
 
   .login-btn{
@@ -191,9 +191,9 @@ input[name="tab_item"] {
     margin: auto 200px auto 0;
   }
 
-  .mypage-container{
-    width: 300px;
-    margin: 50px 70px 50px 80px;
+  .tab_container{
+    width: 580px;
+    margin-left: 100px;
   }
 
   .mypage-img .profile-img{
@@ -210,6 +210,7 @@ input[name="tab_item"] {
   .card-profile{
     width: 300px;
     padding: auto 30px;
+    margin-right: 100px;
   }
 
   .user-profile{
@@ -224,9 +225,8 @@ input[name="tab_item"] {
 
 @media screen and (max-width:768px){
 
-  .card-login{
-    width: 500px;
-    margin: 250px auto auto 120px;
+  .card-signin-sub{
+    padding-right: 60px;
   }
   
   .login-btn{
@@ -237,15 +237,12 @@ input[name="tab_item"] {
     margin-left:50px;
   }
 
-  .card-signin-sub{
-    margin-left: 0;
-  }
-  .card-signin{
-    width: 400px;
-    margin: 250px auto 300px 120px;
+  .signin-icon-btn{
+    width: 380px;
   }
 
   .mypage-container{
+    width: 600px;
     margin: 50px 70px 50px 100px;
   }
 
@@ -261,6 +258,15 @@ input[name="tab_item"] {
 
   .user-profile{
     margin: 20px;
+  }
+
+  .tab_container{
+    width: 700px;
+    margin-left: 200px;
+  }
+
+  .mypage{
+    margin-left: 160px;
   }
 }
 

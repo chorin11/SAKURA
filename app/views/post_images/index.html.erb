@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="row">
+  <div class="row post-index">
     <h3>みんなの投稿</h3>
 
       <% @post_images.each do |post_image| %>
-        <div class="new-form">
+        <div class="new-form new-form-post">
           <div class="col-lg-3">
-            <div class="card">
+            <div class="card card-index">
             <%= link_to user_path(post_image.user_id), data: {"turbolinks" => false} do %>
               <div class="text-center", style="padding-top:15px;">
                 <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/no-image-human.jpeg", class:"icon-img", size:"20x20" %>

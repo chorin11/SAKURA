@@ -53,7 +53,7 @@
   transition: .3s;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin: 50px 80px;
+  margin: 200px 80px;
 }
 .card-show {
   width: 800px;
@@ -115,7 +115,7 @@
   box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
   transition: .3s;
   padding: 30px 50px;
-  margin: 50px 100px;
+  margin: 200px 100px;
 }
 
 .edit-post-btn{
@@ -126,10 +126,6 @@
 @media screen and (max-width:425px){
   header footer{
     width: 100%;
-  }
-
-  .new-form-btn{
-    margin-left: 200px;
   }
 
   .new-form-btn{
@@ -148,17 +144,42 @@
   }
   .post-show{
     width: 300px;
-    margin: 50px auto 70px auto;
+    margin: 50px auto 70px 100px;
   }
 
   .comment-btn{
     margin: 30px auto 30px 200px;
   }
+  
+  .sarch-user{
+    margin-left: 200px;
+  }
+
+  .new-post{
+    width: 850px;
+  }
+
+  .post-index{
+    width: 1000px;
+    margin-left: 50px;
+  }
+  .new-form-post{
+    margin-left: 150px;
+  }
+
+  .card-index{
+    width: 500px;
+  }
 }
 
+
 @media screen and (max-width:768px){
-  .new-form-btn{
-    margin-right: 400px;
+  footer{
+    margin-bottom: -1220px;
+  }
+
+  .new-post{
+    margin: 200px -150px 200px 50px;
   }
 
   .card-show{
@@ -172,11 +193,38 @@
     height: 50%;
   }
   .post-show{
-    margin-top: 100px;
+    width: 800px;
+    margin: 120px;
   }
 
   .comment-btn{
+    width: 300px;
     margin: 30px auto 30px 250px;
+  }
+
+  .edit-post{
+    width: 750px;
+  }
+
+  .edit-post-btn{
+    margin-left: 250px;
+  }
+
+  .post-index{
+    width: 1000px;
+    margin-left: 50px;
+  }
+
+  .new-form-post{
+    margin-left: 200px;
+  }
+
+  .card-index{
+    width: 500px;
+  }
+
+  .hashtag-post-box{
+    margin-left: 250px;
   }
 }
 
