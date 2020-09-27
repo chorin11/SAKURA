@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 2020_09_19_085727) do
     t.string "favorite_sweets"
     t.integer "profile_image_id"
     t.string "introduction"
-    t.string "is_deleted", default: false
+    t.string "is_deleted", default: "f"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

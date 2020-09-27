@@ -15,7 +15,7 @@
           <% @users.each do |user| %>
             <tbody>
               <tr>
-                <th class="icon"><%= attachment_image_tag @user, :profile_image_id, size:"40x40", fallback: "/assets/no-image-human.jpeg", class:"icon-img" %></th>
+                <th class="icon"><%= attachment_image_tag @user, :profile_image_id, size:"40x40", fallback: "no-image-human.jpg", class:"icon-img" %></th>
                 <th><%= user.name %></th>
                 <th><%= user.favorite_sweets %></th>
                 <td><%=link_to "詳細を見る", user_path(user.id) %></td>
@@ -35,7 +35,7 @@
             </p>
             <%= link_to user_path(post.user_id), data: {"turbolinks" => false} do %>
               <div class="text-center", style="padding-top:15px;">
-                <%= attachment_image_tag post.user, :profile_image, fallback: "/assets/no-image-human.jpeg", class:"icon-img", size:"20x20" %>
+                <%= attachment_image_tag post.user, :profile_image, fallback: "no-image-human.jpg", class:"icon-img", size:"20x20" %>
                 <%= post.user.name %>
               </div>
             <% end %>

@@ -10,11 +10,10 @@
                         </td>
                         <td><%= @user.id %></td>
                     </tr>
-
                     <tr>
                         <td><%= attachment_image_tag @user, :profile_image_id, size: '200x200', fallback: "no-image-human.jpg", style:"margin-top: 10px",class:"mypage-img" %></td>
                         <td><%= f.attachment_field :profile_image, placeholder: "プロフィール画像", style:"margin-top: 95px"  %><td>
-                    
+                    </tr>
                     <tr>
                         <td><%= f.label :name, 'ニックネーム' %></td>
                         <td><%= f.text_field :name%></td>
@@ -27,17 +26,12 @@
                         <td><%= f.label :favorite_sweets, '好きな和菓子' %></td>
                         <td><%= f.text_field :favorite_sweets %></td>
                     </tr>
+                    <tr>
                         <td><%= f.label :email, 'メールアドレス' %></td>
                         <td><%= f.email_field :email %></td>
                     </tr>
-                        <td><%= f.label :is_deleted, '会員ステータス' %></td>
-                        <td>                   
-                            <span>有効</span><%= f.radio_button :is_deleted, :false %>
-                            <span>退会済み</span><%= f.radio_button :is_deleted, :true %>
-                        </td>
-                    </tr>
                     <tr>
-                        <td><%= f.submit "プロフィール情報の変更を保存", class:"btn btn-info col-lg-offset-2" %></td>
+                        <td><%= f.submit "プロフィール情報の変更を保存", class:"btn btn-info col-lg-offset-7" %></td>
                     </tr>
                 </table>
             <% end %>

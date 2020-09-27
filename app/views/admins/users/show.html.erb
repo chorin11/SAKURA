@@ -5,13 +5,7 @@
           <table class="table">
             <tr>
               <td>ユーザID</td>
-              <td><%= @user.id %>
-                <% if @user.is_deleted == true %>
-                  <span>退会済み</span>
-                <% else %>
-                  <span>有効会員</span>
-                <% end %>
-              </td>
+              <td><%= @user.id %></td>
             </tr>
             <tr>
               <td>プロフィール画像</td>
