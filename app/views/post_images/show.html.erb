@@ -6,12 +6,10 @@
           <%= attachment_image_tag @post_image, :image, size:"300x300",class: "coffee_image_media card-img-show" %>
 
           <div class="card-show-text">
-            <%= link_to user_path(post_image.user_id) do %>
-              <div class="card-name">
-                <%= attachment_image_tag @post_image.user, :profile_image, fallback: "no-image-human.jpg", size:"25x25" ,class:"icon-img" %>
-                <%= @post_image.user.name %>
-              </div>
-            <% end %>
+            <div class="card-name">
+              <%= attachment_image_tag @post_image.user, :profile_image, fallback: "no-image-human.jpg", size:"25x25" ,class:"icon-img" %>
+              <%= @post_image.user.name %>
+            </div>
 
             <div style="margin-bottom:30px">
               <%= @post_image.introduction %>
