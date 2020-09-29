@@ -1,6 +1,8 @@
 <% if comments %>
+<div class="col-lg-5>
 <%= comments.count %>件コメント
 <h6 class="more" data-toggle="collapse" data-target="#collapseExample" area-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
+</div>
 
 <% comments.first(2).each do |comment| %>
   <% unless comment.id.nil? %>
