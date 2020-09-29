@@ -1,13 +1,10 @@
 <% if comments %>
-<div class="col-lg-5>
 <%= comments.count %>件コメント
 <h6 class="more" data-toggle="collapse" data-target="#collapseExample" area-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
-</div>
-<br>
 
 <% comments.first(2).each do |comment| %>
   <% unless comment.id.nil? %>
-    <li class="comment-container col-lg-10">
+    <li class="comment-container">
       <div class="comment-box">
         <div class="comment-avatar">
           <%= attachment_image_tag comment.user, :profile_image, fallback: "/assets/no-image-human.jpeg", class:"comment-image", size: "30x30",class:"icon-img" %>
@@ -32,12 +29,11 @@
     </li>
   <% end %>
 <% end %>
-<br>
 
 <div class="collapse" id="collapseExample">
   <% comments.offset(2).each do |comment| %>
     <% unless comment.id.nil? %>
-      <li class="comment-container col-lg-10">
+      <li class="comment-container">
         <div class="comment-box">
           <div class="comment-avatar">
             <%= attachment_image_tag comment.user, :profile_image, fallback: "/assets/no-image-human.jpeg", class:"comment-image", size: "30x30", class:"icon-img" %>
