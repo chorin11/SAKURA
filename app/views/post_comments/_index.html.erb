@@ -4,8 +4,8 @@
 
 <% comments.first(2).each do |comment| %>
   <% unless comment.id.nil? %>
-    <li class="comment-container">
-      <div class="comment-box col-lg-10">
+    <li class="comment-container col-lg-10">
+      <div class="comment-box">
         <div class="comment-avatar">
           <%= attachment_image_tag comment.user, :profile_image, fallback: "/assets/no-image-human.jpeg", class:"comment-image", size: "30x30",class:"icon-img" %>
         </div>
@@ -33,8 +33,8 @@
 <div class="collapse" id="collapseExample">
   <% comments.offset(2).each do |comment| %>
     <% unless comment.id.nil? %>
-      <li class="comment-container">
-        <div class="comment-box col-lg-10">
+      <li class="comment-container col-lg-10">
+        <div class="comment-box">
           <div class="comment-avatar">
             <%= attachment_image_tag comment.user, :profile_image, fallback: "/assets/no-image-human.jpeg", class:"comment-image", size: "30x30", class:"icon-img" %>
           </div>
