@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_103417) do
+ActiveRecord::Schema.define(version: 2020_10_02_103352) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_103417) do
     t.text "hashbody"
     t.string "image"
     t.integer "post_comment_id"
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -86,6 +87,13 @@ ActiveRecord::Schema.define(version: 2020_10_01_103417) do
     t.string "sweets_introduction"
     t.integer "genre_id"
     t.string "season"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
