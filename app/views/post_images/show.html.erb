@@ -4,9 +4,6 @@
       <div class="row">
         <div class="card-show">    
           <%= attachment_image_tag @post_image, :image, size:"300x300",class: "coffee_image_media card-img-show" %>
-          <% @post_image.tags.each do |tag| %>
-            <span class="label"><%= tag.name %></span>
-          <% end %>
 
           <div class="card-show-text">
             <div class="card-name">

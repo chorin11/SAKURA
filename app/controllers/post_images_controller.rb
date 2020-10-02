@@ -23,7 +23,7 @@ class PostImagesController < ApplicationController
 
   def create
     @post_image = PostImage.new(post_image_params)
-    @post_image.location = Language.get_data(post_image_params[:introduction])
+    @post_image.score = Language.get_data(post_image_params[:introduction])
     @post_image.user_id = current_user.id
     if @post_image.save
        @comment = PostComment.new

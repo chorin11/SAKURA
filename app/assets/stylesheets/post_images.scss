@@ -45,6 +45,64 @@
 }
 // 投稿記事
 
+// リボン
+.ribbon1 {  
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  right: 10px;
+  margin: 0;
+  padding: 10px 0 7px;
+  z-index: 2;
+  width: 40px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  background: #fa8383;
+  border-radius: 2px 0 0 0;
+  }
+
+.ribbon1:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 0;
+  width: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 10px solid #fa8383;
+}
+
+.ribbon2 {  
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  right: 10px;
+  margin: 0;
+  padding: 10px 0 7px;
+  z-index: 2;
+  width: 40px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  background: #838ffa;
+  border-radius: 2px 0 0 0;
+  }
+
+.ribbon2:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 0;
+  width: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 10px solid #838ffa;
+}
+// リボン
+
 // 投稿詳細
 .post-show{
   background: #fff;
