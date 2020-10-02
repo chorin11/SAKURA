@@ -2,10 +2,16 @@
   <div class="post-show col-lg-10">
     <h3>投稿詳細</h3>
       <div class="row">
-        <div class="card-show">    
-          <%= attachment_image_tag @post_image, :image, size:"300x300",class: "coffee_image_media card-img-show" %>
+        <div class="card-show">
 
+          <%= attachment_image_tag @post_image, :image, size:"300x300",class: "coffee_image_media card-img-show" %>
+          
           <div class="card-show-text">
+
+            <% if @post_image.score.to_f >= 0 %>
+              <i class="ribbon1 fa fa-smile-o"></i>
+            <% end %>
+            
             <div class="card-name">
               <%= attachment_image_tag @post_image.user, :profile_image, fallback: "no-image-human.jpg", size:"25x25" ,class:"icon-img" %>
               <%= @post_image.user.name %>

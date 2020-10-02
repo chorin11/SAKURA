@@ -6,10 +6,8 @@
         <div class="new-form new-form-post">
           <div class="col-lg-3">
             <div class="card card-index">
-              <% if post_image.score.to_i >= 0 %>
-                <i class="ribbon1 fa fa-smile-o"></i> 
-              <% else %>
-                <i class="ribbon2 fa fa-frown-o"></i>
+              <% if post_image.score.to_f >= 0 %>
+                <i class="ribbon1 fa fa-smile-o"></i>
               <% end %>
 
               <%= link_to user_path(post_image.user_id), data: {"turbolinks" => false} do %>
