@@ -30,9 +30,9 @@
       <h3>投稿</h3><br>
         <% @posts.each do |post| %>            
           <div class="card col-lg-3 text-center", style="margin-right:30px;">
-          <% if post.score.to_f >= 0 %>
-            <i class="ribbon1 fa fa-smile-o", style="margin: auto -5px auto auto;"></i>
-          <% end %>
+            <% if post.score.to_f >= 0 %>
+              <i class="ribbon1 fa fa-smile-o", style="margin: auto -5px auto auto;"></i>
+            <% end %>
 
             <p class="index-post-box-top">
               <%= post.created_at.strftime("%Y/%m/%d") %>

@@ -5,11 +5,11 @@
       <% @post_images.each do |post_image| %>
         <div class="new-form new-form-post">
           <div class="col-lg-3">
-            <div class="card card-index">
-              <% if post_image.score.to_f >= 0 %>
-                <i class="ribbon1 fa fa-smile-o"></i>
-              <% end %>
+            <% if post_image.score.to_f >= 0 %>
+              <i class="ribbon1 fa fa-smile-o"></i>
+            <% end %>
 
+            <div class="card card-index">              
               <%= link_to user_path(post_image.user_id), data: {"turbolinks" => false} do %>
                 <div class="text-center", style="padding-top:15px;">
                   <%= attachment_image_tag post_image.user, :profile_image, fallback: "/assets/no-image-human.jpeg", class:"icon-img", size:"20x20" %>

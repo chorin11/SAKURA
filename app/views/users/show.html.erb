@@ -45,6 +45,9 @@
           <div class="c-txtsp">
             <% @post_images.each do |post_image| %>
               <div class="card col-lg-3", style="margin:15px;">
+                <% if post_image.score.to_f >= 0 %>
+                  <i class="ribbon1 fa fa-smile-o", style="margin: auto -5px auto auto;"></i>
+                <% end %>
                 <div class="text-center card-img">
                   <%= attachment_image_tag post_image, :image, format: "jpeg",fallback: "no-image.png", size: '150x150' %><br>
                 </div>
