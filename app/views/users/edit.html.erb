@@ -10,44 +10,44 @@
               <%= user.attachment_field :profile_image, placeholder: "プロフィール画像", style:"margin-top: 50px;"  %>
             </div>
         </div>
-        <div class="col-lg-6">
-          <div class="form-group row" style="margin-top:50px;">
-            <div class='col-lg-4'>
-              <h4><%= user.label :ニックネーム %></h4>
-            </div>
-            <div class='col-lg-8'>
-              <%= user.text_field :name, class: 'form-control' %>
-            </div>
-          </div>
+            <div class="col-lg-6">
+              <div class="form-group row" style="margin-top:50px;">
+                <div class='col-lg-4'>
+                  <h4><%= user.label :ニックネーム %></h4>
+                </div>
+                <div class='col-lg-8'>
+                  <%= user.text_field :name, class: 'form-control' %>
+                </div>
+              </div>
 
-          <div class="form-group row">
-            <div class='col-lg-5'>
-              <h4><%= user.label :メールアドレス %></h4>
-            </div>
-            <div class='col-lg-7'>
-              <%= user.email_field :email, class: 'form-control' %>
-            </div>
-          </div>
+              <div class="form-group row">
+                <div class='col-lg-5'>
+                  <h4><%= user.label :メールアドレス %></h4>
+                </div>
+                <div class='col-lg-7'>
+                  <%= user.email_field :email, class: 'form-control' %>
+                </div>
+              </div>
 
-          <div class="form-group row">
-            <div class='col-lg-4'>
-              <h4><%= user.label :自己紹介文 %></h4>
-            </div>
-            <div class='col-lg-8'>
-              <%= user.text_area :introduction, class: 'form-control' %>
-            </div>
-          </div>
+              <div class="form-group row">
+                <div class='col-lg-4'>
+                  <h4><%= user.label :自己紹介文 %></h4>
+                </div>
+                <div class='col-lg-8'>
+                  <%= user.text_area :introduction, class: 'form-control' %>
+                </div>
+              </div>
 
-          <div class="form-group row">
-            <div class='col-lg-4'>
-              <h4><%= user.label :好きな和菓子 %></h4>
+              <div class="form-group row">
+                <div class='col-lg-4'>
+                  <h4><%= user.label :好きな和菓子 %></h4>
+                </div>
+                <div class='col-lg-8'>
+                  <%= user.text_field :favorite_sweets, class: 'form-control' %>
+                </div>
+              </div>
+              <%= user.submit "プロフィール内容を変更する", class:"btn btn-info", style:"margin-top: 50px;" %>
             </div>
-            <div class='col-lg-8'>
-              <%= user.text_field :favorite_sweets, class: 'form-control' %>
-            </div>
-          </div>
-          <%= user.submit "プロフィール内容を変更する", class:"btn btn-info", style:"margin-top: 50px;" %>
-        </div>
           <% end %>
       </div>
     </div>

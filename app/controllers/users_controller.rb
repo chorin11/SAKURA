@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.update(user_params)
     flash[:notice] = 'あなたの情報が更新されました。'
-    redirect_to user_path(user)
+    redirect_to user_path(user.id)
   end
 
   def unsubscrilbe
